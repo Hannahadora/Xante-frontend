@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,600;1,700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Mulish' !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: #fff;
+}
+
+.btn {
+    border-radius: 4px;
+    background: #281E5D;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0em;
+}
+
+h1 {
+    font-family: Sharp Sans;
+    font-size: 38px !important;
+    font-style: normal;
+    font-weight: 700 !important;
+    line-height: 50px;
+}
+
+h2 {
+    font-family: Sharp Sans;
+    font-size: 32px !important;
+    font-style: normal;
+    font-weight: 600 !important;
+    line-height: 42px;
+    letter-spacing: 0em;
+}
+
+.top-nav-link {
+    color: #DCE0E9;
+    margin-right: 40px; 
+    font-size: 16px;
+}
+
+.header-sect {
+    height: 757px;
+    background: #081B3D; 
+    /* padding: 122px 0 123px 121px; */
+}
+
+.sect-2 {
+    height: 757px;
+    width: 100%;
+    background: #081B3D;
+    padding: 148px 0 303px 231px;
+}
+
+.sect-2-img {
+    height: 605px;
+    /* width: 910px; */
+    position: absolute;
+    left: 809px;
+    top: 684px;
+}
+
+
+/* *******************LOGIN AND SIGNUP STYLES****************** */
+
+#login-page {
+    background: #151F38;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    /* padding: 80px 0 0 0; */
+}
+
+.login-box {
+    width: 500px;
+    height: 500px;
+    padding: 49px 61px 87px 61px;
+    margin-top: 63px;
+}
+
+.rect9 {
+    width: 378px;
+    height: 56px;
+    border-radius: 2px;
+    background: #fff;
+}
+
+@media screen and (max-width: 400px) {
+    .login-box {
+        width: 350px;
+        height: 600px;
+        padding: 30px 1px 50px 1px;
+    }
+    .rect9 {
+        width: 345px;
+    }
+}
+
