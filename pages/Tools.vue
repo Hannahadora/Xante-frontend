@@ -1,0 +1,117 @@
+<template>
+  <div id="tools-view">
+      <Header />
+
+      <div class="mt-20 ml-56">
+        <h2 class="inter-h2 mb-8">APY Calculator</h2>
+        <div class="apycalBox">
+          <div class="flex items-center gap-4 mb-20">
+            <div class="coin-frame active flex items-center gap-2">
+              <img src="../assets/images/eth.png" alt="">
+              <p class="text-sm">ETH</p>
+            </div>
+            <div class="coin-frame flex items-center gap-2">
+              <img src="../assets/images/btc.png" alt="">
+              <p class="text-sm">BTC</p>
+            </div>
+            <div class="coin-frame flex items-center gap-2">
+              <img src="../assets/images/kcs.png" alt="">
+              <p class="text-sm">KCS</p>
+            </div>
+          </div>
+
+          <div class="flex items-center">
+            <form class="">
+              <div class="flex flex-col items-start gap-2">
+                  <label for="amount">Amount</label>
+                  <div class="apyInput flex items-center">
+                    <select class="inter bg-transparent focus:outline-none mr-6" name="" id="">
+                      <option class="inter" value="USD">USD</option>
+                    </select>
+                    <input class="bg-transparent focus:outline-none" type="text" placeholder="Enter Amount" v-model="amount">
+                  </div>
+
+                  <label class="mt-5" for="duration">Duration</label>
+                  <div class="apyInput">
+                    <select class="inter bg-transparent focus:outline-none mr-6" name="" id="">
+                      <option class="inter" value="day">Day</option>
+                    </select>
+                  </div>
+
+                  <div class="apyInput mt-10">
+                    <select class="inter bg-transparent focus:outline-none mr-6" name="" id="">
+                      <option class="inter" value="day">Day</option>
+                    </select>
+                  </div>
+              </div>
+            </form>
+            
+            <div class="vert-rect mx-20"></div>
+
+            <div class="text-center">
+              <span class="font-semi-bold text-xl sharp-sans">APY calculator</span>
+              <hr class="mt-4 mb-6" style="border: 1px solid #1F2B4A; height: 1px; width: 230px;">
+              <p>10% APY on ETH</p>
+              <p class="my-14">10% APY on ETH</p>
+              <p>You’ll earn</p>
+              <h3 class="mt-2 font-semibold">USD12,000</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Footer />
+  </div>
+</template>
+
+<script>
+import Footer from '~/components/Footer.vue'
+import Header from '~/components/Header.vue'
+export default {
+    name: 'Tool',
+    components: { Header, Footer },
+
+}
+</script>
+
+<style>
+  #tools-view {
+    /* height: 1373px; */
+    width: 100%;
+   background: #151F38;
+  }
+
+  .apycalBox {
+    height: 542px;
+    width: 892px;
+    margin-bottom: 204px;
+    border-radius: 4px;
+    background: #0A1227;
+    padding: 32px 85px;
+  }
+
+  .coin-frame {
+    height: 40px;
+    width: 76px;
+    border-radius: 2px;
+    padding: 8px;
+  }
+
+  .coin-frame.active {
+    background: #1F2B4A;
+  }
+
+  .apyInput {
+    height: 44px;
+    width: 317px;
+    border-radius: 4px;
+    background: #1F2B4A;
+    padding: 12.5px 20px;
+  }
+
+  .vert-rect {
+    height: 270px;
+    width: 1px;
+    background: #1F2B4A;
+  }
+</style>

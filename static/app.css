@@ -25,17 +25,18 @@ body {
 }
 
 h1 {
-    font-family: Sharp Sans;
     font-size: 38px !important;
-    font-style: normal;
-    font-weight: 700 !important;
     line-height: 50px;
 }
 
 h2 {
     font-size: 32px !important;
     line-height: 42px;
-    letter-spacing: 0em;
+}
+
+h3 {
+    font-size: 28px !important;
+    line-height: 42px;
 }
 
 .mulish-h2 {
@@ -51,6 +52,18 @@ h2 {
 .inter-h2 {
     font-family: Inter;
     font-weight: 500 !important;
+}
+
+.inter {
+    font-family: Inter;
+}
+
+.mulish {
+    font-family: mulish;
+}
+
+.sharp-sans {
+    font-family: Sharp Sans;
 }
 
 .header-sect {
