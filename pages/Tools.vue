@@ -2,7 +2,7 @@
   <div id="tools-view">
       <Header />
 
-      <div class="mt-20 ml-56">
+      <div class="mt-20 ml-56 pt-20">
         <h2 class="inter-h2 mb-8">APY Calculator</h2>
         <div class="apycalBox">
           <div class="flex items-center gap-4 mb-20">
@@ -28,7 +28,7 @@
                     <select class="inter bg-transparent focus:outline-none mr-6" name="" id="">
                       <option class="inter" value="USD">USD</option>
                     </select>
-                    <input class="bg-transparent focus:outline-none" type="text" placeholder="Enter Amount" v-model="amount">
+                    <input class="bg-transparent focus:outline-none" type="text" placeholder="Enter Amount">
                   </div>
 
                   <label class="mt-5" for="duration">Duration</label>

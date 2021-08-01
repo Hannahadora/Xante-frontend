@@ -23,6 +23,9 @@ export default {
         border-radius: 0px;
         background: #0B0F1A;
         padding: 14px 120px;
+        position: fixed;
+        top: 0;
+        z-index: 9.99999;
     }
 
 </style>

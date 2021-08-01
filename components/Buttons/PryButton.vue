@@ -25,4 +25,8 @@ export default {
         font-weight: 700;
         letter-spacing: 0em;
     }
+
+    #prybtn :hover {
+        background: #3E2F8C;
+    }
 </style>

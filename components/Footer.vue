@@ -40,7 +40,7 @@
       </div>
     </div>
 
-    <p class="text-center mt-20 text-xs">Copyright © Xante 2020</p>
+    <p class="text-center mt-20 text-xs" style="color: #DCE0E9;">Copyright © Xante 2020</p>
   </div>
 </template>
 
@@ -54,6 +54,7 @@ export default {
 
 <style>
     #footer {
+        font-weight: 300 !important;
         width: 100%;
         padding: 80px 297px 32px 220px;
         background: #0B0F1A;   

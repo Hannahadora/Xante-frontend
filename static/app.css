@@ -14,6 +14,7 @@ body {
     font-style: normal;
     font-weight: 400;
     color: #fff;
+    background-color: #151F38;
 }
 
 .btn {
@@ -22,6 +23,10 @@ body {
     color: #fff;
     font-weight: 700;
     letter-spacing: 0em;
+}
+
+p {
+    font-size: 16px;
 }
 
 h1 {
@@ -37,6 +42,10 @@ h2 {
 h3 {
     font-size: 28px !important;
     line-height: 42px;
+}
+
+h4 {
+    font-size: 22px !important;
 }
 
 .mulish-h2 {
@@ -64,6 +73,18 @@ h3 {
 
 .sharp-sans {
     font-family: Sharp Sans;
+}
+
+.primary-white {
+    color: #fff;
+}
+
+.secondary-white {
+    color: #DCE0E9;
+}
+
+.faded {
+    color:#BFC3CE;
 }
 
 .header-sect {
@@ -119,6 +140,14 @@ h3 {
 }
 
 @media screen and (max-width: 400px) {
+    h2 {
+        font-size: 24px !important;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
     .login-box {
         width: 350px;
         height: 600px;

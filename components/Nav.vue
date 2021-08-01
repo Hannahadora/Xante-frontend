@@ -7,7 +7,7 @@
           <NuxtLink to="/tools" class="nav-link">Tools</NuxtLink>
           <NuxtLink to="/opportunities" class="nav-link">Opportunities</NuxtLink>
           <NuxtLink to="/media" class="nav-link">Media</NuxtLink>
-          <NuxtLink to="/contact" class="nav-link">Contact Us</NuxtLink>
+          <NuxtLink to="/contact_us" class="nav-link">Contact Us</NuxtLink>
       </ul>
   </div>
 </template>
@@ -32,6 +32,7 @@ export default {
     font-weight: 600;
     border-bottom: 4px solid #39B87D;
     padding: 30px 0;
+    color: #fff;
   }
   
 </style>
