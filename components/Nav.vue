@@ -3,7 +3,7 @@
       <ul class="flex items-center gap-10">
           <NuxtLink to="/index" class="nav-link">Home</NuxtLink>
           <NuxtLink to="/compare" class="nav-link">Compare</NuxtLink>
-          <NuxtLink to="/marketAnalytics" class="nav-link">Market Analyst</NuxtLink>
+          <NuxtLink to="/market_analytics" class="nav-link">Market Analystics</NuxtLink>
           <NuxtLink to="/tools" class="nav-link">Tools</NuxtLink>
           <NuxtLink to="/opportunities" class="nav-link">Opportunities</NuxtLink>
           <NuxtLink to="/media" class="nav-link">Media</NuxtLink>

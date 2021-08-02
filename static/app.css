@@ -25,6 +25,26 @@ body {
     letter-spacing: 0em;
 }
 
+table {
+    width: 1200px;
+    background: #0A132B;
+}
+
+tr {
+    height: 96px;
+    /* padding: 38px 72px; */
+}
+
+td,
+th {
+    padding: 38px 72px; 
+    text-align: left;
+}
+
+td {
+    margin-bottom: 2px;
+}
+
 p {
     font-size: 16px;
 }
