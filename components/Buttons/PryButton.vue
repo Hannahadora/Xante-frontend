@@ -29,4 +29,11 @@ export default {
     #prybtn :hover {
         background: #3E2F8C;
     }
+
+     @media screen and (max-width: 768px) {
+        #prybtn {
+            padding: 8px;
+            font-size: 12px;
+        }
+    }
 </style>

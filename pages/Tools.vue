@@ -2,10 +2,10 @@
   <div id="tools-view">
       <Header />
 
-      <div class="mt-20 ml-56 pt-20">
+      <div class="mt-20 lg:ml-56 ml-6 lg:mr-4 mr-6 pt-20">
         <h2 class="inter-h2 mb-8">APY Calculator</h2>
         <div class="apycalBox">
-          <div class="flex items-center gap-4 mb-20">
+          <div class="md:flex hidden items-center gap-4 mb-20">
             <div class="coin-frame active flex items-center gap-2">
               <img src="../assets/images/eth.png" alt="">
               <p class="text-sm">ETH</p>
@@ -20,9 +20,9 @@
             </div>
           </div>
 
-          <div class="flex items-center">
+          <div class="flex md:flex-row flex-col items-center">
             <form class="">
-              <div class="flex flex-col items-start gap-2">
+              <div class="md:px-0 px-4 py-4 flex flex-col items-start gap-2">
                   <label for="amount">Amount</label>
                   <div class="apyInput flex items-center">
                     <select class="inter bg-transparent focus:outline-none mr-6" name="" id="">
@@ -46,15 +46,21 @@
               </div>
             </form>
             
-            <div class="vert-rect mx-20"></div>
+            <div class="vert-rect mx-20 md:block hidden"></div>
 
-            <div class="text-center">
+            <div class="text-center md:mt-0 mt-8">
               <span class="font-semi-bold text-xl sharp-sans">APY calculator</span>
-              <hr class="mt-4 mb-6" style="border: 1px solid #1F2B4A; height: 1px; width: 230px;">
-              <p>10% APY on ETH</p>
-              <p class="my-14">10% APY on ETH</p>
-              <p>You’ll earn</p>
-              <h3 class="mt-2 font-semibold">USD12,000</h3>
+              <hr class="mt-4 mb-6" style="border: 1px solid #1F2B4A; height: 1px; width: 230px;">        
+              <div class="flex md:flex-col flex-row md:items-center items-start justify-center  md:my-14">
+                <div class="md:mr-0 mr-5">
+                  <p class="mb-5">10% APY on ETH</p>         
+                  <p>10% APY on ETH</p>
+                </div>
+                <div>       
+                  <p>You’ll earn</p>
+                  <h3 class="mt-2 font-semibold">USD12,000</h3>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -76,8 +82,7 @@ export default {
 
 <style>
   #tools-view {
-    /* height: 1373px; */
-    width: 100%;
+    /* width: 100%; */
    background: #151F38;
   }
 
@@ -114,4 +119,18 @@ export default {
     width: 1px;
     background: #1F2B4A;
   }
+
+  @media screen and (max-width: 768px) {
+
+}
+
+@media screen and (max-width: 500px) {
+
+  .apycalBox {
+    height: auto;
+    width: 100%;
+    padding: 20px 15px;
+  }
+
+}
 </style>

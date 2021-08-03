@@ -1,7 +1,8 @@
 <template>
   <div class="header flex items-center justify-between">
+      <img class="img2 xl:hidden block" src="../assets/images/Menu 2.png" alt="">  
       <Logo />
-      <Nav />
+      <Nav class="xl:block hidden" />  
       <PryButton text="Create Account" />
   </div>
 </template>
@@ -26,6 +27,13 @@ export default {
         position: fixed;
         top: 0;
         z-index: 9.99999;
+    }
+
+     @media screen and (max-width: 768px) {
+        .header {
+            padding: 24px;
+        }
+
     }
 
 </style>

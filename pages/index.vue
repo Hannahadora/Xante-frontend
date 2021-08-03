@@ -1,9 +1,9 @@
 <template>
   <div class="m-0 p-0"> 
-      
+        <Header />
 
     <!-- <div class="header-sect" style=""> -->
-      <!-- <Header /> -->
+    
       <!-- <div class="" style="">
         <h1 class="" style="width: 513px">Smart & Intelligent Search across Cryptocurrency & Traditional Markets for the best return on your assets.</h1>
         <p class="mt-6" style="line-height: 148.3%; font-weight: 400; width:584px;">XanTe focuses on finding the best yields and return across financial markets by connecting Lenders and Borrowers, aggregating data points in order to present consumers with offers in real time.</p>
@@ -35,7 +35,7 @@
       </div>
     </div>    -->
 
-    <!-- <Footer /> -->
+    <Footer />
   </div>
 </template>
 

@@ -30,7 +30,7 @@
                 <div>
                     <div class="flex items-center gap-2">
                         <Color theme="yellow" />
-                        <span class="i gap-2 text-2xl">$92.88B</span>
+                        <span class="inter text-2xl">$92.88B</span>
                     </div>
                     <span class="ml-4 text-sm font-light">Gross value locked</span>
                 </div>
