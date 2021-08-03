@@ -1,0 +1,59 @@
+<template>
+  <div>
+      <table class="top10">
+        <tr>
+            <th>Name</th>
+            <th>Rates</th>
+        </tr>
+        <tr class="border-b border-gray-700">
+            <td class="flex items-center gap-3">
+                <img src="../assets/images/Group 30 (3).png" alt="">
+                Provider name</td>
+            <td>12%</td>
+        </tr>
+        <tr class="border-b border-gray-700">
+            <td class="flex items-center gap-3">
+                <img src="../assets/images/Group 30 (4).png" alt="">
+                Provider name</td>
+            <td>12%</td>
+        </tr>
+        <tr class="border-b border-gray-700">
+            <td class="flex items-center gap-3">
+            <img src="../assets/images/Group 30 (5).png" alt="">
+            Provider name</td>
+            <td>13%</td>
+        </tr>
+        <tr class="border-b border-gray-700">
+            <td class="flex items-center gap-3">
+            <img src="../assets/images/Group 30 (3).png" alt="">
+            Provider name</td>
+            <td>14%</td>
+        </tr>
+        <tr class="border-b border-gray-700">
+            <td class="flex items-center gap-3">
+                <img src="../assets/images/Group 30 (4).png" alt="">
+                Provider name</td>
+            <td>18%</td>
+        </tr>
+    </table>
+        <div class="w-full mx-auto text-center" style="background: #0A132B;">
+        <button class="font-semi-bold p-9">Show All</button>
+    </div>
+</div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style>
+    .top10
+        td,
+        th {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-left: 66px;
+    }
+</style>

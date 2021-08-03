@@ -26,7 +26,7 @@ body {
 }
 
 table {
-    width: 1200px;
+    width: 100%;
     background: #0A132B;
 }
 
@@ -37,13 +37,10 @@ tr {
 
 td,
 th {
-    padding: 38px 72px; 
+    /* padding: 38px 30px; */
     text-align: left;
 }
 
-td {
-    margin-bottom: 2px;
-}
 
 p {
     font-size: 16px;
@@ -107,6 +104,7 @@ h4 {
     color:#BFC3CE;
 }
 
+
 .header-sect {
     height: 757px;
     background: #081B3D; 
@@ -128,6 +126,22 @@ h4 {
     top: 684px;
 }
 
+
+.coin-category-card {
+    width: auto;
+    height: 30px;
+    background: #1F2B4A;
+    /* padding: 4px 8px 6px 8px; */
+    border-radius: 2px;
+    text-align: center;
+}
+
+.coin_category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: 2px;
+}
 
 
 
