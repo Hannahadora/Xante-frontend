@@ -187,16 +187,8 @@ export default {
         width: 100%;
         display: flex;
         flex-direction: row;
-        align-items: start;
+        align-items: flex-start;
         gap: 32px;
-    }
-
-    #ma_table05 
-        td,
-        th {
-        padding-top: 16px;
-        padding-bottom: 16px;
-        padding-left: 66px;
     }
 
 </style>

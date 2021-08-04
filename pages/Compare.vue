@@ -14,8 +14,6 @@ export default {
 }
 </script>
 
-<sty
-Header
-Footerle>
+<style>
 
 </style>
