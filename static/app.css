@@ -27,7 +27,7 @@ body {
 
 table {
     width: 100%;
-    background: #0A132B;
+    background: #0A132B !important;
 }
 
 tr {
@@ -103,6 +103,45 @@ h4 {
 .faded {
     color:#BFC3CE;
 }
+
+
+
+/* ***********************TABLE STYLES****************** */
+.lockvalue-percent {
+    color: #A2F2CD;
+    font-size: 12px;
+}
+.lockvalue-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.platform-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* *****************COMPARE */
+.compare-filters {
+    width: 18.5%;
+    display: grid;
+    grid-template-columns: 50% 50% 50%;
+    gap: 8px;
+}
+.compare-filter-option {
+    padding: 4px 8px;
+    background: #1F2B4A;
+    border-radius: 2px;
+    max-width: 118px;
+    cursor: pointer;
+}
+.active-filter {
+    background-color: #056237;
+}
+
+
 
 
 .header-sect {
