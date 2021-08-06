@@ -125,7 +125,7 @@ h4 {
 
 /* *****************COMPARE */
 .compare-filters {
-    width: 18.5%;
+    width: 20%;
     display: grid;
     grid-template-columns: 50% 50% 50%;
     gap: 8px;
@@ -139,6 +139,16 @@ h4 {
 }
 .active-filter {
     background-color: #056237;
+}
+.search-box {
+    width: 377px;
+    height: 52px;
+    background: #0A1227;
+    border-radius: 4px;
+    padding: 18.5px 22.67px 18.5px 18.5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 

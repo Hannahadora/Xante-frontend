@@ -20,17 +20,28 @@
           </select>
         </div>
 
-        <div>
-          <div class="flex items-center mb-6" style="background: #0A1227; border-radius: 24px; width: 240px">
-            <p class="px-7 py-2 active-filter rounded-3xl">Lending</p>
-            <p class="px-7 py-2 rounded-3xl">Borrowing</p>
+        <div class="flex flex-col items-end">
+          <div class="flex items-center mb-6" style="background: #0A1227; border-radius: 24px;">
+            <p class="active-filter px-7 py-2  rounded-3xl">Lending</p>
+            <p class="p-7 py-2 rounded-3xl">Borrowing</p>
           </div>
+
+          <form class="search-box">
+            <div class="flex items-center">
+              <img class="mr-3" src="~/assets/images/search.png" alt="">
+              <input type="text" class="bg-transparent focus:outline-none" placeholder="Search Coin">
+            </div>
+            <img src="~/assets/images/shape.png" alt="">
+          </form>
         </div>
 
         </div>
       </div>
+
+      <div class="mx-10 mb-40">
+        <CompareTable  />  
+      </div>
       
-      <CompareTable  class="mx-10 mb-16"/>
       <Footer />
   </div>
 </template>
