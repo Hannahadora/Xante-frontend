@@ -22,14 +22,14 @@
 
         <div class="flex flex-col items-end">
           <div class="flex items-center mb-6" style="background: #0A1227; border-radius: 24px;">
-            <p class="active-filter px-7 py-2  rounded-3xl">Lending</p>
-            <p class="p-7 py-2 rounded-3xl">Borrowing</p>
+            <NuxtLink to="/compare/" class="cl px-7 py-2  rounded-3xl">Lending</NuxtLink>
+            <NuxtLink to="/compare/compareborrow" class="cl p-7 py-2 rounded-3xl">Borrowing</NuxtLink>
           </div>
 
           <form class="search-box">
             <div class="flex items-center">
               <img class="mr-3" src="~/assets/images/search.png" alt="">
-              <input type="text" class="bg-transparent focus:outline-none" placeholder="Search Coin">
+              <input type="text" class="bg-transparent focus:outline-none text-sm" placeholder="Search Coin">
             </div>
             <img src="~/assets/images/shape.png" alt="">
           </form>
@@ -39,7 +39,7 @@
       </div>
 
       <div class="mx-10 mb-40">
-        <CompareTable  />  
+         <NuxtChild  />
       </div>
       
       <Footer />
@@ -52,13 +52,21 @@ import Header from '~/components/Header.vue'
 import CompareTable from '~/components/Tables/CompareTable.vue'
 import CompareTableHead from '~/components/Tables/CompareTableHead.vue'
 export default {
-    name: 'Compare',
+    name: 'compare',
     components: { Footer, Header, CompareTable, CompareTableHead,}
 }
 </script>
 
-<style>
+<style scoped>
   .compare-view {
     margin:160px 120px 0px 120px;
   }
+
+  a.nuxt-link-exact-active {
+      background-color: #056237;
+  }
+
+
+
+
 </style>

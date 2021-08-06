@@ -35,8 +35,7 @@ tr {
     /* padding: 38px 72px; */
 }
 
-td,
-th {
+td, th {
     /* padding: 38px 30px; */
     text-align: left;
 }
@@ -154,6 +153,7 @@ h4 {
 
 
 
+
 .header-sect {
     height: 757px;
     background: #081B3D; 
@@ -177,19 +177,20 @@ h4 {
 
 
 .coin-category-card {
-    width: auto;
     height: 30px;
     background: #1F2B4A;
-    /* padding: 4px 8px 6px 8px; */
+    padding: 4px 8px 6px 8px;
     border-radius: 2px;
     text-align: center;
 }
 
 .coin_category-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 160px;
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: 2px;
+    gap: 9px;
+    flex-wrap: wrap;
 }
 
 

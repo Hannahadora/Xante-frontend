@@ -1,6 +1,6 @@
 <template>
   <table id="compare-table">
-      <tr>
+      <tr class="">
         <td class="platform-col">
             <img src="~/assets/images/Aave.png" alt="">
             Aave</td>
@@ -21,7 +21,7 @@
         <td><LGreenBtn/></td>
       </tr>
 
-      <tr>
+      <tr class="">
         <td class="platform-col">
             <img src="~/assets/images/Binance.png" alt="">
             Binanace</td>
@@ -40,7 +40,7 @@
         <td><LGreenBtn/></td>
       </tr>
 
-      <tr>
+      <tr class="">
           <td class="platform-col">
               <img src="~/assets/images/Compound.png" alt="">
               Compound</td>
@@ -76,6 +76,9 @@ export default {
     #compare-table 
         td {
            padding: 19px 16px;
+        }
+        tr {
+            border-bottom: 1px solid #151F38;
         }
 
 </style>
