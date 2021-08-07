@@ -50,10 +50,9 @@
 import Footer from '~/components/Footer.vue'
 import Header from '~/components/Header.vue'
 import CompareTable from '~/components/Tables/CompareTable.vue'
-import CompareTableHead from '~/components/Tables/CompareTableHead.vue'
 export default {
     name: 'compare',
-    components: { Footer, Header, CompareTable, CompareTableHead,}
+    components: { Footer, Header, CompareTable, }
 }
 </script>
 
