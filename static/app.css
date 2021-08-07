@@ -103,6 +103,13 @@ h4 {
     color:#BFC3CE;
 }
 
+.arrow-btn {
+    width: 69px;
+    height: 56px;
+    background: #0A1227;
+    border-radius: 4px;
+    padding: 25px 29px;
+}
 
 
 /* ***********************TABLE STYLES****************** */

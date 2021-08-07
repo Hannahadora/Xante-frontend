@@ -365,9 +365,10 @@ export default {
     #compare-table 
       tr {
             border-bottom: 1px solid #151F38;
+
         }
       td {
-          padding: 19px 16px;
+          padding: 19px 20px;
       }
       
       th {

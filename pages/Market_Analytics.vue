@@ -19,10 +19,10 @@
                 </div>
 
                 <div class="flex items-center gap-2">
-                    <CoinListBtn text="ALL" theme="active" />
-                    <CoinListBtn text="DEFI" />
-                    <CoinListBtn text="NFT" />
-                    <CoinListBtn text="HECO" />
+                    <tab class="active-tab">ALL</tab>
+                    <tab>DEFI</tab>
+                    <tab>NFT</tab>
+                    <tab>HECO</tab>
                 </div>
             </div>
 
@@ -53,10 +53,10 @@
             <h2 class="inter mb-14 mt-44">Stable Coin Analysis</h2>
             <div class="w-full mb-6 flex items-end justify-between">
                 <div class="flex items-end gap-2">
-                    <CoinListBtn text="USDT" theme="active" />
-                    <CoinListBtn text="USDC" />
-                    <CoinListBtn text="BUSD" />
-                    <ArrowBtn />
+                    <tab class="active-tab">USDT</tab>
+                    <tab>USDC</tab>
+                    <tab>BUSD</tab>
+                    <button class="arrow-btn"><img src="~/assets/images/Arrowdown.png" alt=""></button>
                     <span class="text-xs">More coins</span>
                 </div>
                 <div class="">
@@ -136,8 +136,6 @@
 </template>
 
 <script>
-import ArrowBtn from '~/components/Buttons/ArrowBtn.vue'
-import CoinListBtn from '~/components/Buttons/CoinListBtn.vue'
 import DGreenBtn from '~/components/Buttons/DGreenBtn.vue'
 import CategValue from '~/components/CategValue.vue'
 import Coins from '~/components/Coins.vue'
@@ -147,10 +145,11 @@ import Graph from '~/components/Graph.vue'
 import Header from '~/components/Header.vue'
 import LendBorrow from '~/components/LendBorrow.vue'
 import MarketCap from '~/components/MarketCap.vue'
+import Tab from '~/components/Tab.vue'
 import Top10 from '~/components/Top10.vue'
 import Top20 from '~/components/Top20.vue'
 export default {
-  components: { Header, Footer, DGreenBtn, Coins, CoinListBtn, ArrowBtn, Color, Graph, Top10, Top20, CategValue, LendBorrow, MarketCap },
+  components: { Header, Footer, DGreenBtn, Coins, Color, Graph, Top10, Top20, CategValue, LendBorrow, MarketCap, Tab },
   name: 'MarketAnalytics'
 
 }

@@ -40,6 +40,7 @@
 
       <div class="mx-10 mb-40">
          <NuxtChild  />
+         <stable-coin />
       </div>
       
       <Footer />
@@ -50,9 +51,10 @@
 import Footer from '~/components/Footer.vue'
 import Header from '~/components/Header.vue'
 import CompareTable from '~/components/Tables/CompareTable.vue'
+import StableCoin from '~/components/Tables/StableCoin.vue'
 export default {
     name: 'compare',
-    components: { Footer, Header, CompareTable, }
+    components: { Footer, Header, CompareTable, StableCoin, }
 }
 </script>
 
