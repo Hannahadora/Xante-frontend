@@ -7,15 +7,13 @@
 
             
             <div class="mt-14 flex items-center justify-between">
-                <div class="flex items-center">
+                <div class="flex items-start">
                     <div class="h-14 flex items-center gap-2 mr-4" style="background: #1F2B4A;">
                         <p class="py-3 px-5 m-1 rounded" style="background:#056237;">Locked Value</p>
                         <p class="py-3 px-5">Stable coin Analysis</p>
                        <plus-icon class="m-1"/>
                     </div>
-                    <select name="" id="" class="py-4 px-5 rounded" style="background: #1F2B4A;">
-                        <option value="" selected>Top 10 Providers</option>
-                    </select>
+                    <ProviderDropdown />
                 </div>
 
                 <div class="flex items-center gap-2">
@@ -145,11 +143,12 @@ import Graph from '~/components/Graph.vue'
 import Header from '~/components/Header.vue'
 import LendBorrow from '~/components/LendBorrow.vue'
 import MarketCap from '~/components/MarketCap.vue'
+import ProviderDropdown from '~/components/providerDropdown.vue'
 import Tab from '~/components/Tab.vue'
 import Top10 from '~/components/Top10.vue'
 import Top20 from '~/components/Top20.vue'
 export default {
-  components: { Header, Footer, DGreenBtn, Coins, Color, Graph, Top10, Top20, CategValue, LendBorrow, MarketCap, Tab },
+  components: { Header, Footer, DGreenBtn, Coins, Color, Graph, Top10, Top20, CategValue, LendBorrow, MarketCap, Tab, ProviderDropdown },
   name: 'MarketAnalytics'
 
 }

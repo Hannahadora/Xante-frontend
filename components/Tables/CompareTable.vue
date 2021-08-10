@@ -49,305 +49,26 @@
         <th></th>
       </tr>
 
-      <tr class="">
+      <tr class="" v-for="coin in coins" :key="coin">
         <td class="platform-col">
-            <img src="~/assets/images/Aave.png" alt="">
-            Aave</td>
-        <td>
-            <div class="coin_category-grid">
-                <div class="coin-category-card">Ethereum</div>
-                <div class="coin-category-card">AMM</div>
-                <div class="coin-category-card">All Chains</div>
-            </div>
+          <img :src="coin.img" alt=""> 
+          {{ coin.platform }}
         </td>
-        <td class="lockvalue-col">$10.3B <span class="lockvalue-percent">+14.81%</span> </td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
+        <td>
+          <div class="coin_category-grid">
+            <div v-for="category in coin.categories" :key="category">{{ category }}</div>
+          </div>
+        </td>
+        <td class="lockvalue-col">{{ coin.locked_value }}<span class="lockvalue-percent">+14.81%</span> </td>
+        <td>{{ coin.ETH_APY }}</td>
+        <td>{{ coin.BCH_APY }}</td>
+        <td>{{ coin.KCS_APY }}</td>
+        <td>{{ coin.ETH_APY }}</td>
+        <td>{{ coin.BCH_APY }}</td>
+        <td>{{ coin.KCS_APY }}</td>
         <td><LGreenBtn/></td>
       </tr>
 
-      <tr class="">
-        <td class="platform-col">
-            <img src="~/assets/images/Binance.png" alt="">
-            Binanace</td>
-        <td>
-            <div class="coin_category-grid">
-                <div class="coin-category-card">DEX</div>
-            </div>
-        </td>
-        <td class="lockvalue-col">$10.3B <span class="lockvalue-percent">+14.81%</span> </td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td><LGreenBtn/></td>
-      </tr>
-
-      <tr class="">
-          <td class="platform-col">
-              <img src="~/assets/images/Compound.png" alt="">
-              Compound</td>
-            <td>
-                <div class="coin_category-grid">
-                    <div class="coin-category-card">DEX</div>
-                    <div class="coin-category-card">DEX</div>
-                </div>
-            </td>
-          <td class="lockvalue-col">$10.3B <span class="lockvalue-percent">+14.81%</span> </td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td><LGreenBtn/></td>
-      </tr>
-
-        <tr class="">
-        <td class="platform-col">
-            <img src="~/assets/images/Aave.png" alt="">
-            Aave</td>
-        <td>
-            <div class="coin_category-grid">
-                <div class="coin-category-card">Ethereum</div>
-                <div class="coin-category-card">AMM</div>
-                <div class="coin-category-card">All Chains</div>
-            </div>
-        </td>
-        <td class="lockvalue-col">$10.3B <span class="lockvalue-percent">+14.81%</span> </td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td><LGreenBtn/></td>
-      </tr>
-
-      <tr class="">
-        <td class="platform-col">
-            <img src="~/assets/images/Binance.png" alt="">
-            Binanace</td>
-        <td>
-            <div class="coin_category-grid">
-                <div class="coin-category-card">DEX</div>
-            </div>
-        </td>
-        <td class="lockvalue-col">$10.3B <span class="lockvalue-percent">+14.81%</span> </td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td><LGreenBtn/></td>
-      </tr>
-
-      <tr class="">
-          <td class="platform-col">
-              <img src="~/assets/images/Compound.png" alt="">
-              Compound</td>
-            <td>
-                <div class="coin_category-grid">
-                    <div class="coin-category-card">DEX</div>
-                    <div class="coin-category-card">DEX</div>
-                </div>
-            </td>
-          <td class="lockvalue-col">$10.3B <span class="lockvalue-percent">+14.81%</span> </td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td><LGreenBtn/></td>
-      </tr>
-
-        <tr class="">
-        <td class="platform-col">
-            <img src="~/assets/images/Aave.png" alt="">
-            Aave</td>
-        <td>
-            <div class="coin_category-grid">
-                <div class="coin-category-card">Ethereum</div>
-                <div class="coin-category-card">AMM</div>
-                <div class="coin-category-card">All Chains</div>
-            </div>
-        </td>
-        <td class="lockvalue-col">$10.3B <span class="lockvalue-percent">+14.81%</span> </td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td><LGreenBtn/></td>
-      </tr>
-
-      <tr class="">
-        <td class="platform-col">
-            <img src="~/assets/images/Binance.png" alt="">
-            Binanace</td>
-        <td>
-            <div class="coin_category-grid">
-                <div class="coin-category-card">DEX</div>
-            </div>
-        </td>
-        <td class="lockvalue-col">$10.3B <span class="lockvalue-percent">+14.81%</span> </td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td><LGreenBtn/></td>
-      </tr>
-
-      <tr class="">
-          <td class="platform-col">
-              <img src="~/assets/images/Compound.png" alt="">
-              Compound</td>
-            <td>
-                <div class="coin_category-grid">
-                    <div class="coin-category-card">DEX</div>
-                    <div class="coin-category-card">DEX</div>
-                </div>
-            </td>
-          <td class="lockvalue-col">$10.3B <span class="lockvalue-percent">+14.81%</span> </td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td><LGreenBtn/></td>
-      </tr>
-
-        <tr class="">
-        <td class="platform-col">
-            <img src="~/assets/images/Aave.png" alt="">
-            Aave</td>
-        <td>
-            <div class="coin_category-grid">
-                <div class="coin-category-card">Ethereum</div>
-                <div class="coin-category-card">AMM</div>
-                <div class="coin-category-card">All Chains</div>
-            </div>
-        </td>
-        <td class="lockvalue-col">$10.3B <span class="lockvalue-percent">+14.81%</span> </td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td><LGreenBtn/></td>
-      </tr>
-
-      <tr class="">
-        <td class="platform-col">
-            <img src="~/assets/images/Binance.png" alt="">
-            Binanace</td>
-        <td>
-            <div class="coin_category-grid">
-                <div class="coin-category-card">DEX</div>
-            </div>
-        </td>
-        <td class="lockvalue-col">$10.3B <span class="lockvalue-percent">+14.81%</span> </td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td><LGreenBtn/></td>
-      </tr>
-
-      <tr class="">
-          <td class="platform-col">
-              <img src="~/assets/images/Compound.png" alt="">
-              Compound</td>
-            <td>
-                <div class="coin_category-grid">
-                    <div class="coin-category-card">DEX</div>
-                    <div class="coin-category-card">DEX</div>
-                </div>
-            </td>
-          <td class="lockvalue-col">$10.3B <span class="lockvalue-percent">+14.81%</span> </td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td><LGreenBtn/></td>
-      </tr>
-
-        <tr class="">
-        <td class="platform-col">
-            <img src="~/assets/images/Aave.png" alt="">
-            Aave</td>
-        <td>
-            <div class="coin_category-grid">
-                <div class="coin-category-card">Ethereum</div>
-                <div class="coin-category-card">AMM</div>
-                <div class="coin-category-card">All Chains</div>
-            </div>
-        </td>
-        <td class="lockvalue-col">$10.3B <span class="lockvalue-percent">+14.81%</span> </td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td><LGreenBtn/></td>
-      </tr>
-
-      <tr class="">
-        <td class="platform-col">
-            <img src="~/assets/images/Binance.png" alt="">
-            Binanace</td>
-        <td>
-            <div class="coin_category-grid">
-                <div class="coin-category-card">DEX</div>
-            </div>
-        </td>
-        <td class="lockvalue-col">$10.3B <span class="lockvalue-percent">+14.81%</span> </td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td>23.5%</td>
-        <td><LGreenBtn/></td>
-      </tr>
-
-      <tr class="">
-          <td class="platform-col">
-              <img src="~/assets/images/Compound.png" alt="">
-              Compound</td>
-            <td>
-                <div class="coin_category-grid">
-                    <div class="coin-category-card">DEX</div>
-                    <div class="coin-category-card">DEX</div>
-                </div>
-            </td>
-          <td class="lockvalue-col">$10.3B <span class="lockvalue-percent">+14.81%</span> </td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td>23.5%</td>
-          <td><LGreenBtn/></td>
-      </tr>
   </table>
 </template>
 
@@ -356,7 +77,17 @@ import LGreenBtn from '~/components/Buttons/LGreenBtn.vue'
 export default {
     name: 'CompareTable',
   components: { LGreenBtn, },
-
+  data() {
+    return {
+      coins: [
+        {
+          platform: 'Aave', img: '~/assets/images/Aave.png', categories: [ 'DEX', 'DEX', ], locked_value: '$10.3B', ETH_APY: '23.5%', BCH_APY: '23.5%', KCS_APY: '23.5%', ETH_APY: '23.5%', BCH_APY: '23.5%', KCS_APY: '23.5%',
+          platform: 'Binance', img: '~/assets/images/Binance.png', categories: [ 'ETH', 'AMM', 'All Chains' ], locked_value: '$10.3B', ETH_APY: '23.5%', BCH_APY: '23.5%', KCS_APY: '23.5%', ETH_APY: '23.5%', BCH_APY: '23.5%', KCS_APY: '23.5%',
+          platform: 'compound', img: '~/assets/images/Compound.png', categories: [ 'DEX', 'DEX', ], locked_value: '$10.3B', ETH_APY: '23.5%', BCH_APY: '23.5%', KCS_APY: '23.5%', ETH_APY: '23.5%', BCH_APY: '23.5%', KCS_APY: '23.5%',
+        }
+      ]
+    }
+  }
 }
 </script>
 
