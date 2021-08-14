@@ -1,48 +1,7 @@
 <template>
   <div>
-    <div id="market-view" class="wrapper">
-      <h2 class="ma-headers mt-20">Market Analytics</h2>
-
-      <div class="mt-12 lg:flex block  items-center justify-between">
-        <div class="flex items-start">
-          <div
-            class="h-14 flex items-center gap-2 mr-4"
-            style="background: #1f2b4a"
-          >
-            <p class="py-3 px-5 m-1 rounded" style="background: #056237">
-              Locked Value
-            </p>
-            <p class="py-3 px-5">Stable coin Analysis</p>
-            <plus-icon class="m-1" />
-          </div>
-          <!-- <ProviderDropdown /> -->
-        </div>
-
-        <div class="lg:flex hidden items-center gap-2">
-          <tab class="active-tab">ALL</tab>
-          <tab>DEFI</tab>
-          <tab>NFT</tab>
-          <tab>HECO</tab>
-        </div>
-      </div>
-
-      <div class="mt-10 mb-4 flex items-center gap-12">
-        <div>
-          <div class="flex items-center gap-2">
-            <Color theme="yellow" />
-            <h5 class="inter text-2xl">$92.88B</h5>
-          </div>
-          <span class="ml-4 text-sm font-light">Gross value locked</span>
-        </div>
-        <div>
-          <div class="flex items-center gap-2">
-            <Color theme="green" />
-            <h5 class="inter text-2xl">$92.88B</h5>
-          </div>
-          <span class="ml-4 text-sm font-light">Net value locked</span>
-        </div>
-      </div>
-
+    <div id="market-view" class="">
+      
       <AnalyticsTable />
 
       <!-- *************************STABLE COINS******************************** -->
@@ -106,7 +65,7 @@
         <CoinPrice />
       </div>
 
-      <div class="rect_14 mt-24 lg:block hidden">
+      <div class="rect_14 mt-24">
         <div class="bg_11">
           <img src="./images/Group 11.png" alt="" />
         </div>
@@ -231,6 +190,10 @@ th {
 @media screen and (max-width: 768px) {
   #ma_tops {
     display: block;
+  }
+
+  .rect_14 {
+    display: none;
   }
 }
 </style>

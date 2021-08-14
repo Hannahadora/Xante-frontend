@@ -26,7 +26,7 @@ export default {
         padding: 14px 120px;
         position: fixed;
         top: 0;
-        z-index: 9.99999;
+        z-index: 999999.99999;
     }
 
      @media screen and (max-width: 768px) {

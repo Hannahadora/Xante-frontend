@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <h2 class="inter mb-14 mt-44">Stable Coin Analysis</h2>
+    <h2 class="inter lg:mb-14 mb-6 lg:mt-44 10">Stable Coin Analysis</h2>
     <div class="w-full mb-6 flex items-end justify-between">
       <div class="flex items-end gap-2">
         <tab class="active-tab">USDT</tab>
@@ -12,8 +12,8 @@
         <span class="text-xs">More coins</span>
       </div>
       <div class="">
-        <span class="text-sm font-light mr-3">USDT</span>
-        <span class="text-2xl font-medium">$1.00</span>
+        <span class="lg:text-sm small-text font-light mr-3">USDT</span>
+        <span class="lg:text-2xl text-sm font-medium">$1.00</span>
       </div>
     </div>
 

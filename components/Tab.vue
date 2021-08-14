@@ -23,4 +23,13 @@ export default {
     .active-tab {
         background: #281E5D;
     }
+
+    @media screen and (max-width: 540px) {
+        .tab {
+            width: auto;
+            height: auto;
+            padding: 13px 10px;
+            font-size: 12px !important;
+        }
+    }
 </style>

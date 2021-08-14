@@ -244,6 +244,9 @@ h5 {
         flex-direction: row;
         gap: 4px;
     }
+    .wrapper {
+        padding: 0px 24px !important;
+    }
 
 }
 
@@ -256,18 +259,26 @@ h5 {
         width: auto;
     }
     .wrapper {
-        padding: 0px 24px I !important;
+        padding: 0px 24px !important;
     }
     
   }
 
 @media screen and (max-width: 540px) {
+    body {
+        font-size: 14px;
+    }
+
     h2 {
         font-size: 24px !important;
     }
 
     p {
         font-size: 14px;
+    }
+
+    h5 {
+        font-size: 14px !important;
     }
 
     .login-box {
@@ -306,5 +317,13 @@ h5 {
     .wrapper {
         padding: 0px 24px !important;
     }
+
+    .ma-headers {
+        font-size: 18px !important;
+    }
+
+    .small-text {
+        font-size: 7px;
+      }
 }
 
