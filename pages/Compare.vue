@@ -8,10 +8,10 @@
 
         <div class="md:flex block items-center justify-between">
           <div class="compare-filters grid-cols-3 mt-10 mb-16">
-          <p class="compare-filter-option active-filter md:col-span-3">All Markets</p>
-          <p class="compare-filter-option">Centralized</p>
-          <p class="compare-filter-option md:col-span-2">Decentralized</p>
-          <p class="compare-filter-option">Stable coins</p>
+            <p class="compare-filter-option active-filter md:col-span-3">All Markets</p>
+            <p class="compare-filter-option">Centralized</p>
+            <p class="compare-filter-option md:col-span-2">Decentralized</p>
+            <p class="compare-filter-option">Stable coins</p>
           <select class="compare-filter-option" name="categories" id="">
             <option value="0">Categories</option>
           </select>
@@ -20,16 +20,16 @@
           </select>
         </div>
 
-        <div class="flex md:flex-col flex-row items-end">
-          <div class="flex items-center mb-6" style="background: #0A1227; border-radius: 24px;">
-            <NuxtLink to="/compare/" class="cl px-7 py-2  rounded-3xl">Lending</NuxtLink>
-            <NuxtLink to="/compare/compareborrow" class="cl p-7 py-2 rounded-3xl">Borrowing</NuxtLink>
+        <div class="linknsearch-grid">
+          <div class="cls md:mb-6">
+            <NuxtLink to="/compare/" class="cl md:px-7 px-3 md:py-2 py-1  rounded-3xl">Lending</NuxtLink>
+            <NuxtLink to="/compare/compareborrow" class="cl md:px-7 px-3 md:py-2 py-1 rounded-3xl">Borrowing</NuxtLink>
           </div>
 
-          <form class="search-box">
+          <form class="search-box md:mr-0 mr-4">
             <div class="flex items-center">
-              <img class="mr-3" src="~/assets/images/search.png" alt="">
-              <input type="text" class="bg-transparent focus:outline-none text-sm" placeholder="Search Coin">
+              <img class="md:mr-3 mr-2 w-3 h-3" src="~/assets/images/search.png" alt="">
+              <input type="text" class="bg-transparent focus:outline-none md:text-sm text-xs" placeholder="Search Coin">
             </div>
             <img src="~/assets/images/shape.png" alt="">
           </form>
@@ -38,7 +38,7 @@
         </div>
       </div>
 
-      <div class="md:mx-10 mx-0 mb-40">
+      <div class="xl:mx-10 mx-0 mb-40">
 
          <NuxtChild  />
   
@@ -57,6 +57,7 @@ export default {
 }
 </script>
 
+
 <style scoped>
   .compare-view {
     margin:160px 120px 0px 120px;
@@ -65,7 +66,7 @@ export default {
   .compare-filters {
     width: 20%;
     display: grid;
-    /* grid-template-columns: 50% 50% 50%; */
+    grid-template-columns: 50% 50% 50%;
     gap: 8px;
   }
   .compare-filter-option {
@@ -74,6 +75,13 @@ export default {
     border-radius: 2px;
     max-width: 118px;
     cursor: pointer;
+  }
+
+  .cls {
+    background: #0A1227; 
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
   }
 
   a.nuxt-link-exact-active {
@@ -91,7 +99,27 @@ export default {
     justify-content: space-between;
 }
 
-  @media screen and (max-width: 400px) {
+.linknsearch-grid {
+  display: grid;
+  flex-direction: row;
+  
+}
+
+
+
+
+  @media screen and (max-width: 1024px) {
+    .compare-view {
+      margin: 160px 24px 0 24px;
+    }
+
+    .cls { 
+      width: 247px;
+    }
+    
+  }
+
+  @media screen and (max-width: 540px) {
     .compare-view {
       margin: 100px 24px;
     }
@@ -108,13 +136,30 @@ export default {
     }
 
     .search-box {
-      width: 156px;
+      width: 100%;
       height: 39px;
+      padding: 12px 13px;
+      order: 1;
     }
 
     .cl {
-      padding: 5px 18px;
       font-size: 12px !important;
+    }
+
+    .linknsearch-grid {
+      display: grid;
+      flex-direction: column;    
+      grid-template-columns: 50% 50%;
+      align-items: end;
+    }
+
+    .linknsearch-grid :nth-child(2) {
+      order: 1;
+    }
+
+    .cls {
+      width: 150px;
+      height: fit-content !important;
     }
   }
 

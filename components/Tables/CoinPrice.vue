@@ -1,6 +1,12 @@
 <template>
-  <div>
-      <table class="market-cap w-full">
+    <div>
+    <h2 class="ma-headers font-medium">Coin Price</h2>
+
+    <p class="px-4 py-4 my-7 w-24 rounded" style="background: #281e5d">
+        BTC
+    </p>
+
+      <table class="market-cap w-full lg:block hidden">
         <tr>
             <th>Name</th>
             <th>Price</th>
@@ -34,12 +40,20 @@
             <td>$15.0 B</td>
             <td>$15.0 B</td>
         </tr>
-    </table>  
+    </table>
+     <div class="w-full mx-auto text-center lg:block hidden" style="background: #0a132b">
+        <button class="font-semi-bold p-9">Show All</button>
+    </div>
+
+
+    <graph class="lg:hidden block"></graph>
   </div>
 </template>
 
 <script>
+import Graph from '../Graph.vue'
 export default {
+  components: { Graph },
 
 }
 </script>

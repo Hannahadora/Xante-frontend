@@ -1,6 +1,6 @@
 <template>
     <div>
-        <table id="coin_table" class="mt-4 w-full">
+        <table id="coin_table" class="mt-4 w-full lg:block hidden">
             <tr>
                 <th>Platform</th>
                 <th>Category</th>

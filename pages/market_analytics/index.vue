@@ -3,7 +3,7 @@
     <div id="market-view" class="wrapper">
       <h2 class="ma-headers mt-20">Market Analytics</h2>
 
-      <div class="mt-12 flex items-center justify-between">
+      <div class="mt-12 lg:flex block  items-center justify-between">
         <div class="flex items-start">
           <div
             class="h-14 flex items-center gap-2 mr-4"
@@ -18,7 +18,7 @@
           <!-- <ProviderDropdown /> -->
         </div>
 
-        <div class="flex items-center gap-2">
+        <div class="lg:flex hidden items-center gap-2">
           <tab class="active-tab">ALL</tab>
           <tab>DEFI</tab>
           <tab>NFT</tab>
@@ -43,66 +43,23 @@
         </div>
       </div>
 
-      <graph></graph>
-
-      <table class="cat-n-val w-full">
-        <tr>
-          <th>Name</th>
-          <th>Chain</th>
-          <th>Category</th>
-          <th>Locked value</th>
-        </tr>
-
-        <tbody>
-          <tr class="" v-for="ma in filteredMarketAnalytics" :key="ma">
-            <td class="flex items-center gap-3">
-              <img :src="ma.img" alt="" />
-              {{ ma.name }}
-            </td>
-            <td>{{ ma.chain }}</td>
-            <td>
-              <div class="coin_category-grid">
-                <div
-                  class="coin-category"
-                  v-for="category in ma.category"
-                  :key="category"
-                >
-                  {{ category }}
-                </div>
-              </div>
-            </td>
-            <td>{{ ma.locked_value }}</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="w-full mx-auto text-center" style="background: #0a132b">
-        <NuxtLink to="/market_analytics/analytics">
-          <button class="font-semi-bold p-9">Show All</button>
-        </NuxtLink>
-      </div>
+      <AnalyticsTable />
 
       <!-- *************************STABLE COINS******************************** -->
 
       <div class="mt-44">
         <StableCoinsTable />    
       </div>
-      <div class="w-full mx-auto text-center" style="background: #0a132b">
-        <NuxtLink to="/market_analytics/stablecoins">
-          <button class="font-semi-bold p-9">Show All</button>
-        </NuxtLink>
-      </div>
+      
 
       <!-- **********************************Top 10 and 20 **************************** -->
 
       <div id="ma_tops">
-        <div class="w-1/2">
-          <h2 class="ma-headers mb-12 mt-20">Top 10 Liquidity Provisers</h2>
+        <div class="lg:w-1/2 w-full">
           <Top10 />
         </div>
 
-        <div class="w-1/2">
-          <h2 class="ma-headers mb-12 mt-20">Top 20 Borrow Rates</h2>
+        <div class="lg:w-1/2 w-full">
           <Top-20 />
         </div>
       </div>
@@ -145,21 +102,11 @@
 
       <Coins />
 
-      <div class="marketCoinPrice-sect mt-28">
-        <h2 class="ma-headers font-medium">Coin Price</h2>
-
-        <p class="px-4 py-4 my-7 w-24 rounded" style="background: #281e5d">
-          BTC
-        </p>
-        
+      <div class="marketCoinPrice-sect mt-28">   
         <CoinPrice />
-
-        <div class="w-full mx-auto text-center" style="background: #0a132b">
-          <button class="font-semi-bold p-9">Show All</button>
-        </div>
       </div>
 
-      <div class="rect_14 mt-24">
+      <div class="rect_14 mt-24 lg:block hidden">
         <div class="bg_11">
           <img src="./images/Group 11.png" alt="" />
         </div>
@@ -190,6 +137,7 @@ import Tab from "~/components/Tab.vue";
 import Top10 from "~/components/Tables/Top10.vue";
 import Top20 from "~/components/Tables/Top20.vue";
 import StableCoinsTable from '~/components/Tables/StableCoinsTable.vue';
+import AnalyticsTable from '~/components/Tables/AnalyticsTable.vue';
 
 import { mapState } from "vuex";
 
@@ -207,6 +155,7 @@ export default {
     CoinPrice,
     Tab,
     StableCoinsTable,
+    AnalyticsTable,
   },
   name: "MarketAnalytics",
 
@@ -276,5 +225,12 @@ table {
 .stable-coin-table td,
 th {
   padding: 16px 66px;
+}
+
+
+@media screen and (max-width: 768px) {
+  #ma_tops {
+    display: block;
+  }
 }
 </style>

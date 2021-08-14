@@ -236,7 +236,32 @@ h5 {
 /* ***************************MEDIA QUERY ************************ */
 
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 1024px) {
+    td, th {
+        padding: 16px 14px !important;
+    }
+    .lockvalue-col {
+        flex-direction: row;
+        gap: 4px;
+    }
+
+}
+
+
+@media screen and (max-width: 768px) {
+    tr {
+      height: auto;
+    }
+    .coin_category-grid {
+        width: auto;
+    }
+    .wrapper {
+        padding: 0px 24px I !important;
+    }
+    
+  }
+
+@media screen and (max-width: 540px) {
     h2 {
         font-size: 24px !important;
     }
@@ -254,6 +279,10 @@ h5 {
         width: 345px;
     }
 
+    .coin_category-grid {
+        width: auto;
+    }    
+
     .coin-category {
         font-size: 10px !important;
         height: 23px;
@@ -262,6 +291,20 @@ h5 {
     .lockvalue-col {
         flex-direction: row;
         gap: 4px;
+    }
+
+    tr {
+        height: auto;
+        margin: 16px 0px;
+    }
+
+    td, th {
+        padding: 0px !important;
+        margin-top: 16px;
+    }
+
+    .wrapper {
+        padding: 0px 24px !important;
     }
 }
 

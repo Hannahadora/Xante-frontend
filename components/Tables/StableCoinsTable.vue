@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <h2 class="ma-headers mb-14">Stable Coin Analysis</h2>
-        <div class="w-full mb-6 flex items-end justify-between">
+        <div class="w-full mb-6 flex lg:flex-row flex-col lg:items-end items-start justify-between">
           <div class="flex items-end gap-2">
             <tab class="active-tab">USDT</tab>
             <tab>USDC</tab>
@@ -9,9 +9,10 @@
             <button class="arrow-btn">
               <img src="~/assets/images/Arrowdown.png" alt="" />
             </button>
-            <span class="text-xs">More coins</span>
+            <span class="text-xs lg:block hidden">More coins</span>
           </div>
-          <div class="flex items-center">
+
+          <div class="flex items-center lg:mt-0 mt-4">
             <span class="text-sm font-light mr-3">USDT</span>
             <h5 class="inter">$1.00</h5>
           </div>
@@ -19,7 +20,7 @@
 
         <graph> </graph>
 
-        <table>
+        <table class="lg:block hidden">
           <tr>
             <th>Name</th>
             <th>Chain</th>
@@ -43,6 +44,12 @@
             </tr>
           </tbody>
         </table>
+
+        <div class="w-full mx-auto text-center" style="background: #0a132b">
+        <NuxtLink to="/market_analytics/stablecoins">
+          <button class="font-semi-bold p-9">Show All</button>
+        </NuxtLink>
+      </div>
   </div>
 </template>
 
