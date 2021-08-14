@@ -7,31 +7,31 @@
         </tr>
         <tr class="border-b border-gray-700">
             <td class="flex items-center gap-3">
-                <img src="../assets/images/Group 30 (3).png" alt="">
+                <img src="~/assets/images/Group 30 (3).png" alt="">
                 Provider name</td>
             <td>12%</td>
         </tr>
         <tr class="border-b border-gray-700">
             <td class="flex items-center gap-3">
-                <img src="../assets/images/Group 30 (4).png" alt="">
+                <img src="~/assets/images/Group 30 (4).png" alt="">
                 Provider name</td>
             <td>12%</td>
         </tr>
         <tr class="border-b border-gray-700">
             <td class="flex items-center gap-3">
-            <img src="../assets/images/Group 30 (5).png" alt="">
+            <img src="~/assets/images/Group 30 (5).png" alt="">
             Provider name</td>
             <td>13%</td>
         </tr>
         <tr class="border-b border-gray-700">
             <td class="flex items-center gap-3">
-            <img src="../assets/images/Group 30 (3).png" alt="">
+            <img src="~/assets/images/Group 30 (3).png" alt="">
             Provider name</td>
             <td>14%</td>
         </tr>
         <tr class="border-b border-gray-700">
             <td class="flex items-center gap-3">
-                <img src="../assets/images/Group 30 (4).png" alt="">
+                <img src="~/assets/images/Group 30 (4).png" alt="">
                 Provider name</td>
             <td>18%</td>
         </tr>
@@ -44,7 +44,7 @@
 
 <script>
 export default {
-
+    name: 'Top10'
 }
 </script>
 

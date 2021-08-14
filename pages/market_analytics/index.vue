@@ -1,0 +1,280 @@
+<template>
+  <div>
+    <div id="market-view" class="wrapper">
+      <h2 class="ma-headers mt-20">Market Analytics</h2>
+
+      <div class="mt-12 flex items-center justify-between">
+        <div class="flex items-start">
+          <div
+            class="h-14 flex items-center gap-2 mr-4"
+            style="background: #1f2b4a"
+          >
+            <p class="py-3 px-5 m-1 rounded" style="background: #056237">
+              Locked Value
+            </p>
+            <p class="py-3 px-5">Stable coin Analysis</p>
+            <plus-icon class="m-1" />
+          </div>
+          <!-- <ProviderDropdown /> -->
+        </div>
+
+        <div class="flex items-center gap-2">
+          <tab class="active-tab">ALL</tab>
+          <tab>DEFI</tab>
+          <tab>NFT</tab>
+          <tab>HECO</tab>
+        </div>
+      </div>
+
+      <div class="mt-10 mb-4 flex items-center gap-12">
+        <div>
+          <div class="flex items-center gap-2">
+            <Color theme="yellow" />
+            <h5 class="inter text-2xl">$92.88B</h5>
+          </div>
+          <span class="ml-4 text-sm font-light">Gross value locked</span>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <Color theme="green" />
+            <h5 class="inter text-2xl">$92.88B</h5>
+          </div>
+          <span class="ml-4 text-sm font-light">Net value locked</span>
+        </div>
+      </div>
+
+      <graph></graph>
+
+      <table class="cat-n-val w-full">
+        <tr>
+          <th>Name</th>
+          <th>Chain</th>
+          <th>Category</th>
+          <th>Locked value</th>
+        </tr>
+
+        <tbody>
+          <tr class="" v-for="ma in filteredMarketAnalytics" :key="ma">
+            <td class="flex items-center gap-3">
+              <img :src="ma.img" alt="" />
+              {{ ma.name }}
+            </td>
+            <td>{{ ma.chain }}</td>
+            <td>
+              <div class="coin_category-grid">
+                <div
+                  class="coin-category"
+                  v-for="category in ma.category"
+                  :key="category"
+                >
+                  {{ category }}
+                </div>
+              </div>
+            </td>
+            <td>{{ ma.locked_value }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="w-full mx-auto text-center" style="background: #0a132b">
+        <NuxtLink to="/market_analytics/analytics">
+          <button class="font-semi-bold p-9">Show All</button>
+        </NuxtLink>
+      </div>
+
+      <!-- *************************STABLE COINS******************************** -->
+
+      <div class="mt-44">
+        <StableCoinsTable />    
+      </div>
+      <div class="w-full mx-auto text-center" style="background: #0a132b">
+        <NuxtLink to="/market_analytics/stablecoins">
+          <button class="font-semi-bold p-9">Show All</button>
+        </NuxtLink>
+      </div>
+
+      <!-- **********************************Top 10 and 20 **************************** -->
+
+      <div id="ma_tops">
+        <div class="w-1/2">
+          <h2 class="ma-headers mb-12 mt-20">Top 10 Liquidity Provisers</h2>
+          <Top10 />
+        </div>
+
+        <div class="w-1/2">
+          <h2 class="ma-headers mb-12 mt-20">Top 20 Borrow Rates</h2>
+          <Top-20 />
+        </div>
+      </div>
+
+      <!-- ********************************COMPARE COINS WITH METRICS*********************** -->
+
+      <h2 class="font-medium ma-headers mb-12 mt-28">Compare coins</h2>
+      <table id="ma_table06" class="mb-24">
+        <tr>
+          <td rowspan="2" class="inter">
+            <h5>
+              Compare coins different <br />
+              coins using varieties of <br />
+              metrics
+            </h5>
+          </td>
+          <td>
+            <img class="w-12 h-12" src="./images/Group 30 (1).png" alt="" />
+          </td>
+          <td>
+            <img class="w-12 h-12" src="./images/Group 30.png" alt="" />
+          </td>
+        </tr>
+        <tr>
+          <td>Bitcoin</td>
+          <td>Ethereum</td>
+        </tr>
+        <tr>
+          <td>
+            <NuxtLink to="/market_analytics/metrics">
+              <DGreenBtn text="Compare" />
+            </NuxtLink>
+          </td>
+          <td>$15.0.B</td>
+          <td>$15.0.B</td>
+        </tr>
+      </table>
+
+      <!-- ******************COIN**************************** -->
+
+      <Coins />
+
+      <div class="marketCoinPrice-sect mt-28">
+        <h2 class="ma-headers font-medium">Coin Price</h2>
+
+        <p class="px-4 py-4 my-7 w-24 rounded" style="background: #281e5d">
+          BTC
+        </p>
+        
+        <CoinPrice />
+
+        <div class="w-full mx-auto text-center" style="background: #0a132b">
+          <button class="font-semi-bold p-9">Show All</button>
+        </div>
+      </div>
+
+      <div class="rect_14 mt-24">
+        <div class="bg_11">
+          <img src="./images/Group 11.png" alt="" />
+        </div>
+        <div>
+          <h5>
+            Get access to<br />
+            deeper market insight<br />
+            when you join us
+          </h5>
+          <DGreenBtn class="mt-6" text="Join Now" />
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+
+<script>
+import DGreenBtn from "~/components/Buttons/DGreenBtn.vue";
+import Coins from "~/components/Tables/Coins.vue";
+import Color from "~/components/Color.vue";
+import Footer from "~/components/Footer.vue";
+import Graph from "~/components/Graph.vue";
+import Header from "~/components/Header.vue";
+import CoinPrice from "~/components/Tables/CoinPrice.vue";
+// import ProviderDropdown from '~/components/providerDropdown.vue'
+import Tab from "~/components/Tab.vue";
+import Top10 from "~/components/Tables/Top10.vue";
+import Top20 from "~/components/Tables/Top20.vue";
+import StableCoinsTable from '~/components/Tables/StableCoinsTable.vue';
+
+import { mapState } from "vuex";
+
+
+export default {
+  components: {
+    Header,
+    Footer,
+    DGreenBtn,
+    Coins,
+    Color,
+    Graph,
+    Top10,
+    Top20,
+    CoinPrice,
+    Tab,
+    StableCoinsTable,
+  },
+  name: "MarketAnalytics",
+
+  data() {
+    return {
+      marketAnalytics: "",
+    };
+  },
+
+  mounted() {
+    this.marketAnalytics = this.$store.state.MarketAnalytics;
+  },
+
+  computed: {
+    filteredMarketAnalytics() {
+      return this.$store.getters.filteredMarketAnalytics;
+    },
+  },
+
+  methods: {},
+};
+</script>
+
+<style scoped>
+#market-view {
+  margin-top: 150px !important;
+  margin-bottom: 130px !important;
+}
+
+table {
+  margin-top: 2px;
+}
+
+.bg_11 {
+  height: 273px;
+  width: 326px;
+  border-radius: 10px;
+  background: #151f38;
+  padding: 27px 30px;
+  margin-right: 345px;
+}
+
+.rect_14 {
+  width: 100%;
+  height: 352px;
+  padding: 39px 66px;
+  background: #0a132b;
+  display: flex;
+  align-items: center;
+}
+
+#ma_table06 td {
+  padding-left: 107px;
+}
+#ma_table06 tr {
+  border: none;
+}
+
+#ma_tops {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.stable-coin-table td,
+th {
+  padding: 16px 66px;
+}
+</style>

@@ -17,6 +17,7 @@ export default {
         background: #1F2B4A;
         border-radius: 4px;
         padding: 18px 12px;
+        cursor: pointer;
     }
 
     .active-tab {

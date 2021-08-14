@@ -6,7 +6,7 @@
 
 <script>
 export default {
-
+    name: 'LGreenBtn'
 }
 </script>
 
@@ -19,4 +19,12 @@ export default {
         border-radius: 24px;
     }
 
+
+  @media screen and (max-width: 400px) {
+       #l-green-btn {
+           font-size: 12px;
+           line-height: 15px;
+           width: 85px;
+       }
+  }
 </style>
