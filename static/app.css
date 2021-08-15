@@ -131,6 +131,11 @@ h5 {
     padding: 0 120px !important;
 }
 
+.show-btn {
+    background: #0a132b;
+    width: 100%;
+}
+
 
 /* ***********************TABLE STYLES****************** */
 .lockvalue-percent {
@@ -192,7 +197,7 @@ h5 {
 }
 
 .coin_category-grid {
-    width: 160px;
+    width: 240px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -325,5 +330,12 @@ h5 {
     .small-text {
         font-size: 7px;
       }
+
+      .arrow-btn {
+        width: 57.86px;
+        height: 49.96px;
+        padding: 24px 21px;
+    }
+    
 }
 

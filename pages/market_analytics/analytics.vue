@@ -1,17 +1,15 @@
 <template>
   <div class="">
-    <h2 class="ma-headers lg:mt-20 mt-40 wrapper">Market Analytics</h2>
+    <h2 class="ma-headers mt-40 wrapper">Market Analytics</h2>
 
       <div class="mt-12 lg:flex block items-center justify-between wrapper">
         <div class="flex items-start">
           <div
-            class="lg:h-14 h-10 flex items-center gap-2 mr-4"
+            class="lg:h-14 h-10 flex lg:items-center items-start gap-2 lg:mr-4"
             style="background: #1f2b4a"
           >
-            <p class="lg:py-3 py-2 lg:px-5 px-2 m-1 rounded" style="background: #056237">
-              Locked Value
-            </p>
-            <p class="lg:py-3 py-2 lg:px-5 px-2">Stable coin Analysis</p>
+            <p class="lsca active md:m-1">Locked Value</p>
+            <p class="lsca">Stable coin Analysis</p>
             <plus-icon class="m-1" />
           </div>
           <!-- <ProviderDropdown /> -->
@@ -25,7 +23,7 @@
         </div>
       </div>
 
-      <div class="wrapper lg:mt-10 mt-20 mb-4 flex items-end lg:justify-center justify-end lg:gap-12">
+      <div class="wrapper lg:mt-10 mt-20 mb-4 flex items-end lg:justify-start justify-end lg:gap-12">
         <div>
           <div class="flex items-center gap-2">
             <Color theme="yellow" />
@@ -45,7 +43,7 @@
     <div class="wrapper">
       <graph></graph>
 
-      <table class="w-full mb-6 lg:block hidden">
+      <table class="w-full mb-6 lg:table hidden">
         <tr>
           <th>Name</th>
           <th>Chain</th>
@@ -256,12 +254,24 @@ export default {
     margin-top: 2px;
   }
 
+  td, th {
+    padding: 16px 75px;
+  }
+
   .mobile-a-table {
     background: #0A132A;
     margin-top: 4px;
     padding: 16px 24px 29px 24px;
   }
 
+  .active {
+    background: #056237;
+    border-radius: 4px;
+  }
+
+  .lsca {
+    padding: 12px 20px;
+  }
 
   @media screen and (max-width: 768px) {
     h5 {
@@ -288,6 +298,13 @@ export default {
 
     .small-text {
       font-size: 7px;
+    }
+    .active {
+      background: #281E5D;
+    }
+
+    .lsca {
+      padding: 11px 13.5px;
     }
    }
 </style>

@@ -17,4 +17,12 @@ export default {
         padding:16px 19px;
     }
 
+    @media screen and (max-width: 540px) {
+        #plus-icon {
+            padding: 12px 14px;
+            width: 40.69px;
+            height: 34.87px;
+        }
+    }
+
 </style>

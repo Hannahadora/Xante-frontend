@@ -1,5 +1,5 @@
 <template>
-  <div>
+    <div>
       <h2 class="wrapper ma-headers mt-20">Market Analytics</h2>
 
       <div class="wrapper mt-12 lg:flex block items-center justify-between wrapper">
@@ -42,43 +42,52 @@
         </div>
       </div>
 
+     
       <div class="wrapper">
-        <graph></graph>
-      </div>
 
-      <table class="wrapper lg:block hidden w-full">
-        <tr>
-          <th>Name</th>
-          <th>Chain</th>
-          <th>Category</th>
-          <th>Locked value</th>
-        </tr>
+          <graph ></graph>
 
-        <tbody>
-          <tr class="" v-for="ma in filteredMarketAnalytics" :key="ma">
-            <td class="flex items-center gap-3">
-              <img :src="ma.img" alt="" />
-              {{ ma.name }}
-            </td>
-            <td>{{ ma.chain }}</td>
-            <td>
-              <div class="coin_category-grid">
-                <div
-                  class="coin-category"
-                  v-for="category in ma.category"
-                  :key="category"
-                >
-                  {{ category }}
-                </div>
-              </div>
-            </td>
-            <td>{{ ma.locked_value }}</td>
+
+          <table class="lg:table hidden w-full">
+          <tr>
+            <th>Name</th>
+            <th>Chain</th>
+            <th>Category</th>
+            <th>Locked value</th>
           </tr>
-        </tbody>
-      </table>
 
-      <div class="mt-11">
-        <div class="mobile-ma-table lg:hidden block" v-for="ma in filteredMarketAnalytics" :key="ma">
+          <tbody>
+            <tr class="" v-for="ma in filteredMarketAnalytics" :key="ma">
+              <td class="flex items-center gap-4">
+                <img :src="ma.img" alt="" />
+                {{ ma.name }}
+              </td>
+              <td>{{ ma.chain }}</td>
+              <td>
+                <div class="coin_category-grid">
+                  <div
+                    class="coin-category"
+                    v-for="category in ma.category"
+                    :key="category"
+                  >
+                    {{ category }}
+                  </div>
+                </div>
+              </td>
+              <td>{{ ma.locked_value }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="lg:block hidden w-full text-center">
+          <NuxtLink to="/market_analytics/analytics">
+            <button class="show-btn font-semi-bold lg:p-9 p-2">Show All</button>
+          </NuxtLink>
+        </div>
+      </div>
+      
+
+      <div class="mt-11 lg:hidden block">
+        <div class="mobile-ma-table" v-for="ma in filteredMarketAnalytics" :key="ma">
           <div class="flex items-center gap-3 mb-5">
               <img :src="ma.img" alt="" class="w-10 h-10" />
               {{ ma.name }}
@@ -98,12 +107,12 @@
                <span>Locked Value</span>
                <span>{{ ma.locked_value }}</span>
            </div>
-      </div>
-      </div>
-       <div class="w-full mx-auto text-center" style="background: #0a132b">
-        <NuxtLink to="/market_analytics/analytics">
-          <button class="font-semi-bold lg:p-9 p-2">Show All</button>
-        </NuxtLink>
+        </div>
+       <div class="w-full text-center">
+          <NuxtLink to="/market_analytics/analytics">
+            <button class="show-btn font-semi-bold lg:p-9 p-2">Show All</button>
+          </NuxtLink>
+        </div>
       </div>
   </div>
 </template>
@@ -134,6 +143,10 @@ export default {
 <style scoped>
     table {
         margin-top: 2px;
+    }
+
+    th, td {
+      padding: 16px 66px;
     }
 
     .mobile-ma-table {

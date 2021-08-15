@@ -1,5 +1,5 @@
 <template>
-    <div class=" lg:block hidden">
+    <div class="">
         <table id="coin_table" class="mt-4 w-full">
             <tr>
                 <th>Platform</th>
@@ -96,8 +96,8 @@
             </tbody>
         </table>
 
-         <div class="w-full mx-auto text-center" style="background: #0A132B;">
-            <button class="font-semi-bold p-9">Show All</button>
+         <div class="w-full text-center">
+            <button class="show-btn font-semi-bold p-9">Show All</button>
         </div>
     </div>
 </template>

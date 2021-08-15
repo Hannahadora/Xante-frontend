@@ -1,19 +1,18 @@
 <template>
-  <div>
-    <div id="market-view" class="">
+  <div id="market-view">
       
       <AnalyticsTable />
 
       <!-- *************************STABLE COINS******************************** -->
 
-      <div class="mt-44">
+      <div class="lg:mt-44 mt-11">
         <StableCoinsTable />    
       </div>
       
 
       <!-- **********************************Top 10 and 20 **************************** -->
 
-      <div id="ma_tops">
+      <div id="ma_tops" class="w-full">
         <div class="lg:w-1/2 w-full">
           <Top10 />
         </div>
@@ -25,116 +24,75 @@
 
       <!-- ********************************COMPARE COINS WITH METRICS*********************** -->
 
-      <h2 class="font-medium ma-headers mb-12 mt-28">Compare coins</h2>
-      <table id="ma_table06" class="mb-24">
-        <tr>
-          <td rowspan="2" class="inter">
-            <h5>
-              Compare coins different <br />
-              coins using varieties of <br />
-              metrics
-            </h5>
-          </td>
-          <td>
-            <img class="w-12 h-12" src="./images/Group 30 (1).png" alt="" />
-          </td>
-          <td>
-            <img class="w-12 h-12" src="./images/Group 30.png" alt="" />
-          </td>
-        </tr>
-        <tr>
-          <td>Bitcoin</td>
-          <td>Ethereum</td>
-        </tr>
-        <tr>
-          <td>
-            <NuxtLink to="/market_analytics/metrics">
-              <DGreenBtn text="Compare" />
-            </NuxtLink>
-          </td>
-          <td>$15.0.B</td>
-          <td>$15.0.B</td>
-        </tr>
-      </table>
+      <div class="lg:mb-12 mb-4 lg:mt-28 mt-8">
+        <CompareMetricsTable />
+      </div>
 
       <!-- ******************COIN**************************** -->
 
-      <Coins />
+      <div class="wrapper lg:block hidden">
+        <Coins />
+      </div>
 
-      <div class="marketCoinPrice-sect mt-28">   
+      <div class="marketCoinPrice-sect lg:mt-28 mt-12">   
         <CoinPrice />
       </div>
 
-      <div class="rect_14 mt-24">
-        <div class="bg_11">
-          <img src="./images/Group 11.png" alt="" />
-        </div>
-        <div>
-          <h5>
-            Get access to<br />
-            deeper market insight<br />
-            when you join us
-          </h5>
-          <DGreenBtn class="mt-6" text="Join Now" />
+      <div class="wrapper">
+        <div class="rect_14 mt-24">
+          <div class="bg_11">
+            <img src="./images/Group 11.png" alt="" />
+          </div>
+          <div>
+            <h5>
+              Get access to<br />
+              deeper market insight<br />
+              when you join us
+            </h5>
+            <DGreenBtn class="mt-6" text="Join Now" />
+          </div>
         </div>
       </div>
-    </div>
+
   </div>
 </template>
 
 
 <script>
-import DGreenBtn from "~/components/Buttons/DGreenBtn.vue";
 import Coins from "~/components/Tables/Coins.vue";
 import Color from "~/components/Color.vue";
-import Footer from "~/components/Footer.vue";
-import Graph from "~/components/Graph.vue";
-import Header from "~/components/Header.vue";
 import CoinPrice from "~/components/Tables/CoinPrice.vue";
 // import ProviderDropdown from '~/components/providerDropdown.vue'
-import Tab from "~/components/Tab.vue";
 import Top10 from "~/components/Tables/Top10.vue";
 import Top20 from "~/components/Tables/Top20.vue";
 import StableCoinsTable from '~/components/Tables/StableCoinsTable.vue';
 import AnalyticsTable from '~/components/Tables/AnalyticsTable.vue';
-
-import { mapState } from "vuex";
-
+import CompareMetricsTable from '~/components/Tables/CompareMetricsTable.vue';
+import DGreenBtn from '~/components/Buttons/DGreenBtn.vue';
 
 export default {
+  name: "MarketAnalytics",
   components: {
-    Header,
-    Footer,
-    DGreenBtn,
     Coins,
     Color,
-    Graph,
     Top10,
     Top20,
     CoinPrice,
-    Tab,
     StableCoinsTable,
     AnalyticsTable,
+    CompareMetricsTable,
+    DGreenBtn,
   },
-  name: "MarketAnalytics",
+
 
   data() {
     return {
-      marketAnalytics: "",
     };
   },
 
-  mounted() {
-    this.marketAnalytics = this.$store.state.MarketAnalytics;
-  },
+  methods: {
 
-  computed: {
-    filteredMarketAnalytics() {
-      return this.$store.getters.filteredMarketAnalytics;
-    },
   },
-
-  methods: {},
 };
 </script>
 
@@ -166,19 +124,13 @@ table {
   align-items: center;
 }
 
-#ma_table06 td {
-  padding-left: 107px;
-}
-#ma_table06 tr {
-  border: none;
-}
-
 #ma_tops {
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   gap: 32px;
+  padding: 0px 120px;
 }
 
 .stable-coin-table td,
@@ -187,9 +139,18 @@ th {
 }
 
 
+@media screen and (max-width: 1024px) {
+  #ma_tops {
+    padding: 0 24px;
+    gap: 32px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   #ma_tops {
     display: block;
+    padding: 0;
+    gap: 0px;
   }
 
   .rect_14 {

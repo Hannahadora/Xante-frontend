@@ -18,11 +18,12 @@
       </div>
     </div>
 
-    <div class="">
-       <graph> </graph>
+    <div class="sc-graph wrapper">
+       <graph></graph>
     </div>
 
-      <table class="wrapper lg:block hidden">
+      <div class="wrapper">
+        <table class="lg:table hidden">
         <tr>
           <th>Name</th>
           <th>Chain</th>
@@ -45,13 +46,15 @@
             <td>{{ stablecoin.lend_apy }}</td>
           </tr>
         </tbody>
-      </table>
+        </table>
+      </div>
 
-        <div class="wrapper w-full mx-auto text-center" style="background: #0a132b">
+      <div class="wrapper s-btn-holder w-full text-center">
         <NuxtLink to="/market_analytics/stablecoins">
-          <button class="font-semi-bold lg:p-9 p-2">Show All</button>
+          <button class="show-btn font-semi-bold lg:p-9 p-2">Show All</button>
         </NuxtLink>
       </div>
+    
   </div>
 </template>
 
@@ -83,6 +86,14 @@ export default {
 
 th, td {
   padding: 16px 66px !important;
+}
+
+
+@media screen and (max-width: 540px) {
+  .s-btn-holder, .sc-graph {
+    padding: 0px !important;
+  }
+
 }
 
 </style>

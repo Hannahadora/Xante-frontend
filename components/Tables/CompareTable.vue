@@ -1,6 +1,6 @@
 <template>
   <div>
-    <table id="compare-table" class="lg:block hidden">
+    <table id="compare-table" class="lg:table hidden">
       <tr class="">
         <th>Platforms</th>
         <th>Category</th>
@@ -319,6 +319,17 @@ th {
   padding: 21px 24px;
   width: 100%;
   margin-bottom: 4px;
+}
+
+.coin_category-grid {
+  width: 160px;
+}
+
+
+@media screen and (max-width: 768px) {
+  td, th {
+    font-size: 14px !important;
+  }
 }
 
 </style>

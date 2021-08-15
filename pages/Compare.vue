@@ -6,34 +6,34 @@
         <p class="mt-2 md:block hidden">Compare the best lend and borrow rate for your <br>
             crypto assets across Defi protocols and Providers.</p>
 
-        <div class="md:flex block items-center justify-between">
+        <div class="lg:flex block items-center justify-between">
           <div class="compare-filters grid-cols-3 mt-10 mb-16">
             <p class="compare-filter-option active-filter md:col-span-3">All Markets</p>
             <p class="compare-filter-option">Centralized</p>
             <p class="compare-filter-option md:col-span-2">Decentralized</p>
             <p class="compare-filter-option">Stable coins</p>
-          <select class="compare-filter-option" name="categories" id="">
-            <option value="0">Categories</option>
-          </select>
-          <select class="compare-filter-option" name="titleList" id="">
-            <option value="0">Title list</option>
-          </select>
-        </div>
-
-        <div class="linknsearch-grid">
-          <div class="cls md:mb-6">
-            <NuxtLink to="/compare/" class="cl md:px-7 px-3 md:py-2 py-1  rounded-3xl">Lending</NuxtLink>
-            <NuxtLink to="/compare/compareborrow" class="cl md:px-7 px-3 md:py-2 py-1 rounded-3xl">Borrowing</NuxtLink>
+            <select class="compare-filter-option" name="categories" id="">
+              <option value="0">Categories</option>
+            </select>
+            <select class="compare-filter-option" name="titleList" id="">
+              <option value="0">Title list</option>
+            </select>
           </div>
 
-          <form class="search-box md:mr-0 mr-4">
-            <div class="flex items-center">
-              <img class="md:mr-3 mr-2 w-3 h-3" src="~/assets/images/search.png" alt="">
-              <input type="text" class="bg-transparent focus:outline-none md:text-sm text-xs" placeholder="Search Coin">
+          <div class="linknsearch-grid">
+            <div class="cls lg:mb-6">
+              <NuxtLink to="/compare/" class="cl md:px-7 px-3 md:py-2 py-1  rounded-3xl">Lending</NuxtLink>
+              <NuxtLink to="/compare/compareborrow" class="cl md:px-7 px-3 md:py-2 py-1 rounded-3xl">Borrowing</NuxtLink>
             </div>
-            <img src="~/assets/images/shape.png" alt="">
-          </form>
-        </div>
+
+            <form class="search-box md:mr-0 mr-4">
+              <div class="flex items-center">
+                <img class="md:mr-3 mr-2 w-3 h-3" src="~/assets/images/search.png" alt="">
+                <input type="text" class="bg-transparent focus:outline-none md:text-sm text-xs" placeholder="Search Coin">
+              </div>
+              <img src="~/assets/images/shape.png" alt="">
+            </form>
+          </div>
 
         </div>
       </div>
@@ -102,21 +102,43 @@ export default {
 .linknsearch-grid {
   display: grid;
   flex-direction: row;
-  
+  justify-items: end;
 }
 
 
 
 
+
+
+  @media screen and (max-width: 768px) {
+     .linknsearch-grid {
+      display: grid;
+      flex-direction: flex;    
+      grid-template-columns: 50% 50%;
+      align-items: end;
+      justify-items: baseline;
+      margin-bottom: 44px;
+    }
+
+      .compare-filters {
+        width: 30%;
+    }
+    
+  }
+
   @media screen and (max-width: 1024px) {
+     .compare-filters {
+        width: 30%;
+    }
+
     .compare-view {
       margin: 160px 24px 0 24px;
     }
 
     .cls { 
-      width: 247px;
+      width: 250px;
     }
-    
+
   }
 
   @media screen and (max-width: 540px) {
@@ -151,6 +173,7 @@ export default {
       flex-direction: column;    
       grid-template-columns: 50% 50%;
       align-items: end;
+      justify-content: space-between;
     }
 
     .linknsearch-grid :nth-child(2) {
