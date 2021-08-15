@@ -1,7 +1,7 @@
 <template>
   <div>
       <h2 class="wrapper ma-headers mb-12 mt-20">Top 20 Borrow Rates</h2>
-      <table class="top20">
+      <table class="wrapper top20">
         <tr>
             <th>Name</th>
             <th>Rates</th>

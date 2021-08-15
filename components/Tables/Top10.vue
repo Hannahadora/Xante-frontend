@@ -1,7 +1,7 @@
 <template>
   <div>
       <h2 class="wrapper ma-headers mb-12 mt-20">Top 10 Liquidity Provisers</h2>
-  <table class="top20">
+      <table class="wrapper top20">
         <tr>
             <th>Name</th>
             <th>Rates</th>
@@ -39,7 +39,7 @@
             </tr>
         </tbody>
     </table>
-    <div class="w-full mx-auto text-center lg:block hidden" style="background: #0A132B;">
+    <div class="wrapper w-full mx-auto text-center lg:block hidden" style="background: #0A132B;">
         <button class="font-semi-bold lg:p-9 p-2">Show All</button>
     </div>
 </div>

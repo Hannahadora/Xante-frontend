@@ -2,7 +2,7 @@
   <div>
       <h2 class="wrapper ma-headers mt-20">Market Analytics</h2>
 
-      <div class="mt-12 lg:flex block items-center justify-between wrapper">
+      <div class="wrapper mt-12 lg:flex block items-center justify-between wrapper">
         <div class="flex items-start">
           <div
             class="h-14 flex items-center gap-2 mr-4"
@@ -25,7 +25,7 @@
         </div>
       </div>
 
-      <div class="wrapper lg:mt-10 mt-20 mb-4 flex items-end lg:justify-center justify-end lg:gap-12">
+      <div class="wrapper lg:mt-10 mt-20 mb-4 flex items-end lg:justify-start justify-end lg:gap-12">
        <div>
           <div class="flex items-center gap-2">
             <Color theme="yellow" />
@@ -46,7 +46,7 @@
         <graph></graph>
       </div>
 
-      <table class="lg:block hidden w-full">
+      <table class="wrapper lg:block hidden w-full">
         <tr>
           <th>Name</th>
           <th>Chain</th>
