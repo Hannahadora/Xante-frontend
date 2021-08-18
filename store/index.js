@@ -34,29 +34,23 @@ export const state = () => ({
       { name: 'Provider name', img: ma3, chain: 'Bsc', category: [ 'DEX', 'DEX' ], locked_value: '$15.0 B' },
     ],
 
-    metrics: [
-      {
-        coin_name: '',
-        params: [
-          { name: 'Price', value: '$15.0 B' },
-          { name: 'Market Cap', value: '$15.0 B' },
-          { name: 'Trading Volume', value: '$15.0 B' },
-          { name: 'Available supply', value: '$15.0 B' },
-          { name: 'Trading Volume ', value: '$15.0 B' },
-          { name: 'Available supply', value: '$15.0 B' },
-          { name: 'All Time High', value: '$15.0 B' },
-          { name: 'Trading Volume ', value: '$15.0 B' },
-          { name: 'Available supply', value: '$15.0 B' },
-          { name: 'All Time High', value: '$15.0 B' },
-          { name: 'Available supply', value: '$15.0 B' },
-          { name: 'All Time High', value: '$15.0 B' },
-          { name: 'Trading Volume', value: '$15.0 B' },
-          { name: 'Available supply', value: '$15.0 B' },
-          { name: 'All Time High', value: '$15.0 B' },
-        ]
-      } 
+    params: [
+      { name: 'Price', value: '$15.0 B' },
+      { name: 'Market Cap', value: '$15.0 B' },
+      { name: 'Trading Volume', value: '$15.0 B' },
+      { name: 'Available supply', value: '$15.0 B' },
+      { name: 'Trading Volume ', value: '$15.0 B' },
+      { name: 'Available supply', value: '$15.0 B' },
+      { name: 'All Time High', value: '$15.0 B' },
+      { name: 'Trading Volume ', value: '$15.0 B' },
+      { name: 'Available supply', value: '$15.0 B' },
+      { name: 'All Time High', value: '$15.0 B' },
+      { name: 'Available supply', value: '$15.0 B' },
+      { name: 'All Time High', value: '$15.0 B' },
+      { name: 'Trading Volume', value: '$15.0 B' },
+      { name: 'Available supply', value: '$15.0 B' },
+      { name: 'All Time High', value: '$15.0 B' },
     ]
-
   })
   
   export const mutations = {
@@ -74,10 +68,7 @@ export const state = () => ({
     filteredMarketAnalytics: (state) => {
       return state.marketAnalytics.slice(0, 3)
      },
-     params: (state) => {
-       return state.metrics.params
-     }
-  }
+    }
   
   export default {
     state,
