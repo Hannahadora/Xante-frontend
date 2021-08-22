@@ -54,8 +54,8 @@
       <tbody>
         <tr
           class=""
-          v-for="ma in marketAnalytics"
-          :key="ma"
+          v-for="(ma, i) in marketAnalytics"
+          :key="i"
         >
           <td class="flex items-center gap-3">
             <img :src="ma.img" alt="" />
@@ -66,8 +66,8 @@
             <div class="coin_category-grid">
               <div
                 class="coin-category"
-                v-for="category in ma.category"
-                :key="category"
+                v-for="(category, j) in ma.category"
+                :key="j"
               >
                 {{ category }}
               </div>
@@ -78,8 +78,8 @@
 
         <tr
           class=""
-          v-for="ma in marketAnalytics"
-          :key="ma"
+          v-for="(ma, i) in marketAnalytics"
+          :key="i"
         >
           <td class="flex items-center gap-3">
             <img :src="ma.img" alt="" />
@@ -90,8 +90,8 @@
             <div class="coin_category-grid">
               <div
                 class="coin-category"
-                v-for="category in ma.category"
-                :key="category"
+                v-for="(category, j) in ma.category"
+                :key="j"
               >
                 {{ category }}
               </div>
@@ -102,8 +102,8 @@
 
         <tr
           class=""
-          v-for="ma in marketAnalytics"
-          :key="ma"
+          v-for="(ma, k) in marketAnalytics"
+          :key="k"
         >
           <td class="flex items-center gap-3">
             <img :src="ma.img" alt="" />
@@ -114,8 +114,8 @@
             <div class="coin_category-grid">
               <div
                 class="coin-category"
-                v-for="category in ma.category"
-                :key="category"
+                v-for="(category, l) in ma.category"
+                :key="l"
               >
                 {{ category }}
               </div>
@@ -126,8 +126,8 @@
 
         <tr
           class=""
-          v-for="ma in marketAnalytics"
-          :key="ma"
+          v-for="(ma, i) in marketAnalytics"
+          :key="i"
         >
           <td class="flex items-center gap-3">
             <img :src="ma.img" alt="" />
@@ -138,8 +138,8 @@
             <div class="coin_category-grid">
               <div
                 class="coin-category"
-                v-for="category in ma.category"
-                :key="category"
+                v-for="(category, k) in ma.category"
+                :key="k"
               >
                 {{ category }}
               </div>
@@ -150,8 +150,8 @@
 
         <tr
           class=""
-          v-for="ma in marketAnalytics"
-          :key="ma"
+          v-for="(ma, t) in marketAnalytics"
+          :key="t"
         >
           <td class="flex items-center gap-3">
             <img :src="ma.img" alt="" />
@@ -162,8 +162,8 @@
             <div class="coin_category-grid">
               <div
                 class="coin-category"
-                v-for="category in ma.category"
-                :key="category"
+                v-for="(category, o) in ma.category"
+                :key="o"
               >
                 {{ category }}
               </div>
@@ -174,8 +174,8 @@
 
         <tr
           class=""
-          v-for="ma in marketAnalytics"
-          :key="ma"
+          v-for="(ma, i) in marketAnalytics"
+          :key="i"
         >
           <td class="flex items-center gap-3">
             <img :src="ma.img" alt="" />
@@ -186,8 +186,8 @@
             <div class="coin_category-grid">
               <div
                 class="coin-category"
-                v-for="category in ma.category"
-                :key="category"
+                v-for="(category, u) in ma.category"
+                :key="u"
               >
                 {{ category }}
               </div>
@@ -203,7 +203,7 @@
     <!-- *****************MOBILe -->
 
     <div class="my-11">
-      <div class="mobile-a-table lg:hidden block" v-for="ma in marketAnalytics" :key="ma">
+      <div class="mobile-a-table lg:hidden block" v-for="(ma, p) in marketAnalytics" :key="p">
           <div class="flex items-center gap-3 mb-5">
               <img :src="ma.img" alt=""  class="w-10 h-10"/>
               {{ ma.name }}

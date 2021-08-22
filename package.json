@@ -6,10 +6,9 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
-    "preinstall": "npx npm-force-resolutions"
+    "generate": "nuxt generate"
   },
-  "resolutions": { 
+  "resolutions": {
     "glob-parent": "^6.0.1"
   },
   "dependencies": {

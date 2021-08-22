@@ -42,7 +42,7 @@
         </div>
       </div>
 
-     
+
       <div class="wrapper">
 
           <graph ></graph>
@@ -57,7 +57,7 @@
           </tr>
 
           <tbody>
-            <tr class="" v-for="ma in filteredMarketAnalytics" :key="ma">
+            <tr class="" v-for="(ma, i) in filteredMarketAnalytics" :key="i">
               <td class="flex items-center gap-4">
                 <img :src="ma.img" alt="" />
                 {{ ma.name }}
@@ -67,8 +67,8 @@
                 <div class="coin_category-grid">
                   <div
                     class="coin-category"
-                    v-for="category in ma.category"
-                    :key="category"
+                    v-for="(category,j) in ma.category"
+                    :key="j"
                   >
                     {{ category }}
                   </div>
@@ -84,10 +84,10 @@
           </NuxtLink>
         </div>
       </div>
-      
+
 
       <div class="mt-11 lg:hidden block">
-        <div class="mobile-ma-table" v-for="ma in filteredMarketAnalytics" :key="ma">
+        <div class="mobile-ma-table" v-for="(ma, i) in filteredMarketAnalytics" :key="i">
           <div class="flex items-center gap-3 mb-5">
               <img :src="ma.img" alt="" class="w-10 h-10" />
               {{ ma.name }}

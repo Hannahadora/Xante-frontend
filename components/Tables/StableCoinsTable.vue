@@ -34,8 +34,8 @@
         <tbody>
           <tr
             class="stable-cointable"
-            v-for="stablecoin in filteredstablecoins"
-            :key="stablecoin"
+            v-for="(stablecoin, i ) in filteredstablecoins"
+            :key="i"
           >
             <td class="flex items-center gap-3">
               <img :src="stablecoin.img" alt="" />
@@ -54,7 +54,7 @@
           <button class="show-btn font-semi-bold lg:p-9 p-2">Show All</button>
         </NuxtLink>
       </div>
-    
+
   </div>
 </template>
 
@@ -67,7 +67,7 @@ export default {
   components: { Graph, Tab },
   data() {
     return {
-      
+
     };
   },
 

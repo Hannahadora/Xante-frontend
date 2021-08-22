@@ -51,7 +51,7 @@
       </tr>
 
       <tbody>
-        <tr class="" v-for="coin in coins" :key="coin">
+        <tr class="" v-for="(coin, i) in coins" :key="i">
           <td class="platform-col">
             <img :src="coin.img" alt="" />
             {{ coin.platform }}
@@ -60,8 +60,8 @@
             <div class="coin_category-grid">
               <div
                 class="coin-category"
-                v-for="category in coin.categories"
-                :key="category"
+                v-for="(category, j) in coin.categories"
+                :key="j"
               >
                 {{ category }}
               </div>
@@ -79,7 +79,7 @@
           <td><LGreenBtn /></td>
         </tr>
 
-        <tr class="" v-for="coin in coins" :key="coin">
+        <tr class="" v-for="(coin, i) in coins" :key="i">
           <td class="platform-col">
             <img :src="coin.img" alt="" />
             {{ coin.platform }}
@@ -88,8 +88,8 @@
             <div class="coin_category-grid">
               <div
                 class="coin-category"
-                v-for="category in coin.categories"
-                :key="category"
+                v-for="(category,j) in coin.categories"
+                :key="j"
               >
                 {{ category }}
               </div>
@@ -107,7 +107,7 @@
           <td><LGreenBtn /></td>
         </tr>
 
-        <tr class="" v-for="coin in coins" :key="coin">
+        <tr class="" v-for="(coin, i) in coins" :key="i">
           <td class="platform-col">
             <img :src="coin.img" alt="" />
             {{ coin.platform }}
@@ -116,8 +116,8 @@
             <div class="coin_category-grid">
               <div
                 class="coin-category"
-                v-for="category in coin.categories"
-                :key="category"
+                v-for="(category, j) in coin.categories"
+                :key="j"
               >
                 {{ category }}
               </div>
@@ -135,7 +135,7 @@
           <td><LGreenBtn /></td>
         </tr>
 
-        <tr class="" v-for="coin in coins" :key="coin">
+        <tr class="" v-for="(coin, i) in coins" :key="i">
           <td class="platform-col">
             <img :src="coin.img" alt="" />
             {{ coin.platform }}
@@ -144,8 +144,8 @@
             <div class="coin_category-grid">
               <div
                 class="coin-category"
-                v-for="category in coin.categories"
-                :key="category"
+                v-for="(category, j) in coin.categories"
+                :key="j"
               >
                 {{ category }}
               </div>
@@ -163,7 +163,7 @@
           <td><LGreenBtn /></td>
         </tr>
 
-        <tr class="" v-for="coin in coins" :key="coin">
+        <tr class="" v-for="(coin, i) in coins" :key="i">
           <td class="platform-col">
             <img :src="coin.img" alt="" />
             {{ coin.platform }}
@@ -172,8 +172,8 @@
             <div class="coin_category-grid">
               <div
                 class="coin-category"
-                v-for="category in coin.categories"
-                :key="category"
+                v-for="(category, j) in coin.categories"
+                :key="j"
               >
                 {{ category }}
               </div>
@@ -191,7 +191,7 @@
           <td><LGreenBtn /></td>
         </tr>
 
-        <tr class="" v-for="coin in coins" :key="coin">
+        <tr class="" v-for="(coin, i) in coins" :key="i">
           <td class="platform-col">
             <img :src="coin.img" alt="" />
             {{ coin.platform }}
@@ -200,8 +200,8 @@
             <div class="coin_category-grid">
               <div
                 class="coin-category"
-                v-for="category in coin.categories"
-                :key="category"
+                v-for="(category,j) in coin.categories"
+                :key="j"
               >
                 {{ category }}
               </div>
@@ -223,7 +223,7 @@
 
     <!-- *****MOBILE VIEW -->
 
-    <div class="mobile-table lg:hidden block" v-for="coin in coins" :key="coin">
+    <div class="mobile-table lg:hidden block" v-for="(coin,j ) in coins" :key="j">
       <div class="flex items-start justify-between">
 
         <div class="flex items-start mb-6">
@@ -236,8 +236,8 @@
               <div class="coin_category-grid">
                 <span
                   class="coin-category"
-                  v-for="category in coin.categories"
-                  :key="category"
+                  v-for="(category, i) in coin.categories"
+                  :key="i"
                 >
                   {{ category }}
                 </span>

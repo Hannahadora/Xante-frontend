@@ -28,10 +28,10 @@
 
             <form class="search-box md:mr-0 mr-4">
               <div class="flex items-center">
-                <img class="md:mr-3 mr-2 w-3 h-3" src="~/assets/images/search.png" alt="">
+                <img class="md:mr-3 mr-2 w-3 h-3" src="assets/images/search.png" alt="">
                 <input type="text" class="bg-transparent focus:outline-none md:text-sm text-xs" placeholder="Search Coin">
               </div>
-              <img src="~/assets/images/shape.png" alt="">
+              <img src="assets/images/shape.png" alt="">
             </form>
           </div>
 
@@ -41,9 +41,9 @@
       <div class="xl:mx-10 mx-0 mb-40">
 
          <NuxtChild  />
-  
+
       </div>
-      
+
       <Footer />
   </div>
 </template>
@@ -78,7 +78,7 @@ export default {
   }
 
   .cls {
-    background: #0A1227; 
+    background: #0A1227;
     border-radius: 24px;
     display: flex;
     align-items: center;
@@ -113,7 +113,7 @@ export default {
   @media screen and (max-width: 768px) {
      .linknsearch-grid {
       display: grid;
-      flex-direction: flex;    
+      flex-direction: flex;
       grid-template-columns: 50% 50%;
       align-items: end;
       justify-items: baseline;
@@ -123,7 +123,7 @@ export default {
       .compare-filters {
         width: 30%;
     }
-    
+
   }
 
   @media screen and (max-width: 1024px) {
@@ -135,7 +135,7 @@ export default {
       margin: 160px 24px 0 24px;
     }
 
-    .cls { 
+    .cls {
       width: 250px;
     }
 
@@ -170,7 +170,7 @@ export default {
 
     .linknsearch-grid {
       display: grid;
-      flex-direction: column;    
+      flex-direction: column;
       grid-template-columns: 50% 50%;
       align-items: end;
       justify-content: space-between;
