@@ -12,12 +12,17 @@
             <p class="compare-filter-option">Centralized</p>
             <p class="compare-filter-option md:col-span-2">Decentralized</p>
             <p class="compare-filter-option">Stable coins</p>
-            <select class="compare-filter-option" name="categories" id="">
-              <option value="0">Categories</option>
-            </select>
-            <select class="compare-filter-option" name="titleList" id="">
-              <option value="0">Title list</option>
-            </select>
+            <Dropdown
+              dTitle="Categories"
+              :options="categories"
+              v-model="selected"
+            />
+
+            <Dropdown
+              dTitle="Title List 2"
+              :options="titleLists"
+              v-model="selected"
+            />
           </div>
 
           <div class="linknsearch-grid">
@@ -49,11 +54,19 @@
 </template>
 
 <script>
+import Dropdown from '~/components/Dropdown.vue'
 import Footer from '~/components/Footer.vue'
 import Header from '~/components/Header.vue'
 export default {
     name: 'compare',
-    components: { Footer, Header, }
+    components: { Footer, Header, Dropdown, },
+    data() {
+      return {
+        selected: '',
+        categories: [ 'All', 'Ethereum', 'BSC', 'XDai', 'Polygor Synthetic Asets', 'DEX', 'AMM', 'Synthetic Assets', 'DEX', 'Amm', 'Synthetic Assets' ],
+        titleLists: [ 'All', 'Ethereum', 'BSC', 'XDai', 'Polygor Synthetic Asets', 'DEX', 'AMM', 'Synthetic Assets', 'DEX', 'Amm', 'Synthetic Assets' ],
+      }
+    }
 }
 </script>
 

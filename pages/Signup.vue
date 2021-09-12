@@ -1,8 +1,8 @@
 <template>
-  <div id="login-page">
+<div id="login-page">
     <Logo class="mx-auto pt-20"/>
     <div class="login-box text-center mx-auto">
-        <h2>Log in to Xante</h2>
+        <h2>Sign Up to Xante</h2>
         <p class="mt-4 mb-12">A short caption text here. Could be why Xante or a feature or a reason etc.</p>
         <div class="rect9 mb-8 flex items-center justify-center">
             <img class="mr-3" src="../assets/images/Google.png" alt="">
@@ -13,9 +13,9 @@
             <p class="text-black font-semibold">Sign up with Facebook</p>
         </div>  
 
-        <div class="mt-12">
-            <span>Don't have an account? </span><span class="font-bold">Sign Up</span>
-        </div>   
+        <NuxtLink to="/login" class="mt-12">
+            <span>Already have an account? </span><span class="font-bold">Log in</span>
+        </NuxtLink>   
     </div>
 </div>
   
@@ -24,13 +24,14 @@
 <script>
 import Logo from '~/components/Logo.vue'
 export default {
-    name: 'Signup',
+    name: 'Login',
   components: { Logo },
 
 }
 </script>
 
-<style>
+<style scoped>
+
 h2 {
     font-family: Mulish;
     font-size: 32px;
@@ -38,4 +39,5 @@ h2 {
     font-weight: 600;
     line-height: 40px;
 }
+
 </style>

@@ -3,7 +3,9 @@
       <img class="img2 xl:hidden block" src="../assets/images/Menu 2.png" alt="">  
       <Logo />
       <Nav class="xl:block hidden" />  
-      <PryButton text="Create Account" />
+      <NuxtLink to="/signup">
+        <PryButton text="Create Account" />
+      </NuxtLink>
   </div>
 </template>
 
