@@ -16,9 +16,7 @@
           >
         </div>
       </div>
-      <NuxtLink to="/market_analytics" class="nav-link"
-        >Market Analytics</NuxtLink
-      >
+      <NuxtLink to="/Analytics" class="nav-link">Market Analytics</NuxtLink>
       <NuxtLink to="/tools" class="nav-link">Tools</NuxtLink>
       <NuxtLink to="/opportunities" class="nav-link">Opportunities</NuxtLink>
       <NuxtLink to="/media" class="nav-link">Media</NuxtLink>

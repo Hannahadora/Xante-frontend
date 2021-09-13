@@ -1,19 +1,16 @@
 <template>
-  <div>
-    <h2 class="wrapper ma-headers mt-20">Market Analytics</h2>
+  <div class="">
+    <header-vue />
+    <h2 class="ma-headers mt-40 wrapper">Market Analytics</h2>
 
-    <div
-      class="wrapper mt-12 lg:flex block items-center justify-between wrapper"
-    >
+    <div class="mt-12 lg:flex block items-center justify-between wrapper">
       <div class="flex items-start">
         <div
-          class="h-14 flex items-center gap-2 mr-4"
+          class="lg:h-14 h-10 flex lg:items-center items-start gap-2 lg:mr-4"
           style="background: #1f2b4a"
         >
-          <p class="py-3 px-5 m-1 rounded" style="background: #056237">
-            Locked Value
-          </p>
-          <p class="py-3 px-5">Stable coin Analysis</p>
+          <p class="lsca active md:m-1">Locked Value</p>
+          <p class="lsca">Stable coin Analysis</p>
           <plus-icon class="m-1" />
         </div>
         <!-- <ProviderDropdown /> -->
@@ -63,7 +60,7 @@
     <div class="wrapper">
       <graph></graph>
 
-      <table class="lg:table hidden w-full">
+      <table class="w-full mb-6 lg:table hidden">
         <tr>
           <th>Name</th>
           <th>Chain</th>
@@ -73,7 +70,7 @@
 
         <tbody>
           <tr class="" v-for="(analytics, i) in marketAnalytics" :key="i">
-            <td class="flex items-center gap-4">
+            <td class="flex items-center gap-3">
               <img :src="`/images/${analytics.img}`" alt="" />
               {{ analytics.name }}
             </td>
@@ -93,21 +90,18 @@
           </tr>
         </tbody>
       </table>
-      <div class="lg:block hidden w-full text-center">
-        <NuxtLink to="/all_analytics">
-          <button class="show-btn font-semi-bold lg:p-9 p-2">Show All</button>
-        </NuxtLink>
-      </div>
     </div>
 
-    <div class="mt-11 lg:hidden block">
+    <!-- *****************MOBILe -->
+
+    <div class="my-11">
       <div
-        class="mobile-ma-table"
-        v-for="(analytics, b) in marketAnalytics"
-        :key="b"
+        class="mobile-a-table lg:hidden block"
+        v-for="(analytics, p) in marketAnalytics"
+        :key="p"
       >
         <div class="flex items-center gap-3 mb-5">
-          <img :src="`/images/${analytics.img}`" alt="" class="w-10 h-10" />
+          <img :src="analytics.img" alt="" class="w-10 h-10" />
           {{ analytics.name }}
         </div>
 
@@ -121,40 +115,36 @@
           <span>{{ analytics.category }}</span>
         </div>
 
-        <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center justify-between">
           <span>Locked Value</span>
           <span>{{ analytics.locked_value }}</span>
         </div>
-      </div>
-      <div class="w-full text-center">
-        <NuxtLink to="/all_analytics">
-          <button class="show-btn font-semi-bold lg:p-9 p-2">Show All</button>
-        </NuxtLink>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: "AnalyticsTable",
+import Color from "~/components/Color.vue";
+import Graph from "~/components/Graph.vue";
+import HeaderVue from "~/components/Header.vue";
+import Tab from "~/components/Tab.vue";
 
+export default {
+  name: "analytics",
+  components: {
+    Color,
+    Graph,
+    Tab,
+    HeaderVue,
+  },
   data() {
-    return {
-      // marketAnalytics: "",
-    };
+    return {};
   },
 
-  // mounted() {
-  //  this.marketAnalytics = this.$store.state.MarketAnalytics;
-  // },
-
   computed: {
-    // filteredMarketAnalytics() {
-    //   return this.$store.getters.filteredMarketAnalytics;
-    // },
     marketAnalytics() {
-      return this.$store.state.analytics.marketAnalytics.slice(0, 3);
+      return this.$store.state.analytics.marketAnalytics;
     },
   },
 };
@@ -165,15 +155,24 @@ table {
   margin-top: 2px;
 }
 
-th,
-td {
-  padding: 16px 66px;
+td,
+th {
+  padding: 16px 75px;
 }
 
-.mobile-ma-table {
-  padding: 16px 24px 29px 24px;
+.mobile-a-table {
   background: #0a132a;
-  margin-bottom: 4px;
+  margin-top: 4px;
+  padding: 16px 24px 29px 24px;
+}
+
+.active {
+  background: #056237;
+  border-radius: 4px;
+}
+
+.lsca {
+  padding: 12px 20px;
 }
 
 @media screen and (max-width: 768px) {
@@ -201,6 +200,13 @@ td {
 
   .small-text {
     font-size: 7px;
+  }
+  .active {
+    background: #281e5d;
+  }
+
+  .lsca {
+    padding: 11px 13.5px;
   }
 }
 </style>

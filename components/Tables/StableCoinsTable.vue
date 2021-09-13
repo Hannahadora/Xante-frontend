@@ -1,7 +1,19 @@
 <template>
   <div class="">
     <h2 class="wrapper ma-headers lg:mb-14 mb-6">Stable Coin Analysis</h2>
-    <div class="wrapper w-full mb-6 flex lg:flex-row flex-col lg:items-end items-start justify-between">
+    <div
+      class="
+        wrapper
+        w-full
+        mb-6
+        flex
+        lg:flex-row
+        flex-col
+        lg:items-end
+        items-start
+        justify-between
+      "
+    >
       <div class="flex items-end gap-2">
         <tab class="active-tab">USDT</tab>
         <tab>USDC</tab>
@@ -19,11 +31,11 @@
     </div>
 
     <div class="sc-graph wrapper">
-       <graph></graph>
+      <graph></graph>
     </div>
 
-      <div class="wrapper">
-        <table class="lg:table hidden">
+    <div class="wrapper">
+      <table class="lg:table hidden">
         <tr>
           <th>Name</th>
           <th>Chain</th>
@@ -34,27 +46,26 @@
         <tbody>
           <tr
             class="stable-cointable"
-            v-for="(stablecoin, i ) in filteredstablecoins"
+            v-for="(coin, i) in stableCoins"
             :key="i"
           >
             <td class="flex items-center gap-3">
-              <img :src="stablecoin.img" alt="" />
-              {{ stablecoin.name }}
+              <img :src="`/images/${coin.img}`" alt="" />
+              {{ coin.name }}
             </td>
-            <td>{{ stablecoin.chain }}</td>
-            <td>{{ stablecoin.borrow_apy }}</td>
-            <td>{{ stablecoin.lend_apy }}</td>
+            <td>{{ coin.chain }}</td>
+            <td>{{ coin.borrow_apy }}</td>
+            <td>{{ coin.lend_apy }}</td>
           </tr>
         </tbody>
-        </table>
-      </div>
+      </table>
+    </div>
 
-      <div class="wrapper s-btn-holder w-full text-center">
-        <NuxtLink to="/market_analytics/stablecoins">
-          <button class="show-btn font-semi-bold lg:p-9 p-2">Show All</button>
-        </NuxtLink>
-      </div>
-
+    <div class="wrapper s-btn-holder w-full text-center">
+      <NuxtLink to="/stable_coins">
+        <button class="show-btn font-semi-bold lg:p-9 p-2">Show All</button>
+      </NuxtLink>
+    </div>
   </div>
 </template>
 
@@ -66,34 +77,27 @@ export default {
   name: "StableCoinTable",
   components: { Graph, Tab },
   data() {
-    return {
-
-    };
+    return {};
   },
 
   computed: {
-    stablecoins() {
-      return this.$store.state.stablecoins;
-    },
-    filteredstablecoins() {
-      return this.$store.getters.filteredstablecoins
+    stableCoins() {
+      return this.$store.state.stable_coins.stableCoins.slice(0, 3);
     },
   },
 };
 </script>
 
 <style scoped>
-
-th, td {
+th,
+td {
   padding: 16px 66px !important;
 }
 
-
 @media screen and (max-width: 540px) {
-  .s-btn-holder, .sc-graph {
+  .s-btn-holder,
+  .sc-graph {
     padding: 0px !important;
   }
-
 }
-
 </style>
