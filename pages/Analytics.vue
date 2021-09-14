@@ -36,7 +36,9 @@
             deeper market insight<br />
             when you join us
           </h5>
-          <d-green-btn-vue class="mt-6" text="Join Now" />
+          <nuxt-link to="/Contact_Us">
+            <d-green-btn-vue class="mt-6" text="Join Now" />
+          </nuxt-link>
         </div>
       </div>
     </div>

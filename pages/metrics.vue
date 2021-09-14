@@ -4,7 +4,7 @@
     <div class="metric-view">
       <div class="wrapper">
         <h2 class="ma-headers mb-7">Compare Coins</h2>
-        <span class="text-sm mb-4">Type in coin to compare</span>
+        <span class="text-sm mb-4">Select coins to compare</span>
         <div class="flex space-x-4 items-center mt-4">
           <div class="relative">
             <select
@@ -29,17 +29,26 @@
               <img src="/images/arrowdown.png" class="w-3" alt="" />
             </div>
           </div>
-          <div class="w-full all-coin flex justify-between p-4">
+          <div
+            class="w-full all-coin p-2"
+            style=""
+            :class="allCoin.length === 0 ? 'hidden' : ' flex'"
+          >
             <div
               class="flex justify-between items-center p-2"
+              v-for="(currency, k) in allCoin"
+              :key="k"
               style="min-width: 113px; background: #151f38; border-radius: 3px"
             >
-              <div v-for="(singleCoin, k) in allCoin" :key="k">
-                {{ singleCoin }}
+              <div>
+                {{ currency }}
               </div>
-              <button>
+              <button @click="removeCoin(k)">
                 <img src="/images/delete.svg" alt="" />
               </button>
+            </div>
+            <div class="w-full text-right">
+              <button id="dGreenBtn">Compare</button>
             </div>
           </div>
         </div>
@@ -50,19 +59,19 @@
           <tr>
             <th></th>
             <th>
-              <div class="">
+              <div class="pt-8">
                 <img
                   class="lg:w-auto w-5"
                   src="/images/Group 30 (1).png"
                   alt=""
                 />
-                <span class="lg:block hidden">{{ coinOne.name }}</span>
+                <span class="lg:block hidden mt-8">{{ coinOne.name }}</span>
               </div>
             </th>
             <th>
-              <div class="">
+              <div class="pt-8">
                 <img class="lg:w-auto w-5" src="/images/Group 30.png" alt="" />
-                <span class="lg:block hidden">{{ coinTwo.name }}</span>
+                <span class="lg:block hidden mt-8">{{ coinTwo.name }}</span>
               </div>
             </th>
           </tr>
@@ -133,17 +142,32 @@ export default {
     coinTwo() {
       return this.$store.state.metrics.coinTwo;
     },
+  },
+  methods: {
+    removeCoin(i) {
+      // this.allCoin.splice(i, 1);
+      this.allCoin = this.allCoin.filter((e, i) => {
+        return i !== i;
+      });
+    },
     all() {
+      // console.log(this.allCoin, "hey");
       if (this.coin !== "") {
-        return this.allCoin.push(this.coin);
+        this.allCoin.push(this.coin);
       }
-      // console.log(allCoin);
     },
   },
 };
 </script>
 
 <style scoped>
+#dGreenBtn {
+  width: 100px;
+  height: 36px;
+  background: #056237;
+  border-radius: 4px;
+  padding: 8px 16px;
+}
 .metric-view {
   margin-top: 154px;
   margin-bottom: 82px;
@@ -167,6 +191,7 @@ select:focus {
   background: #0a1227;
   border-radius: 4px;
 }
+
 @media screen and (max-width: 540px) {
   td,
   th {

@@ -98,7 +98,7 @@ export default {
   components: { Graph, Tab },
   data() {
     return {
-      allStableCoins: ["USDT", "USDC", "BUSD"],
+      allStableCoins: [],
       stableCoin: "USDT",
       visible: false,
       coins: ["USDF", "USDC", "BUSD"],
@@ -118,14 +118,17 @@ export default {
       this.visible = !this.visible;
     },
     selectCoin(value) {
-      this.allStableCoins.push(value);
-      const removeDuplicate = (data) => {
-        return data.filter((e, index) => {
-          data.indexOf(e) === index;
-        });
-      };
-      console.log(removeDuplicate(this.allStableCoins));
-      this.allStableCoins = removeDuplicate(this.allStableCoins);
+      if (!this.allStableCoins.includes(value)) {
+        this.allStableCoins.push(value);
+      }
+
+      // const removeDuplicate = (data) => {
+      //   return data.filter((e, index) => {
+      //     data.indexOf(e) === index;
+      //   });
+      // };
+      // console.log(removeDuplicate(this.allStableCoins));
+      // this.allStableCoins = removeDuplicate(this.allStableCoins);
     },
   },
   mounted() {
