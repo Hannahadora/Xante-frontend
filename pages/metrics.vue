@@ -13,13 +13,14 @@
               id="coin"
               style="width: 90px"
               v-model="coin"
+              @change="add(coin)"
             >
               <option selected value>Coin</option>
               <option
                 v-for="(name, i) in compareCoin"
                 :key="i"
                 :value="name.fullName"
-                @click="coin = name.fullName"
+
               >
                 {{ name.crypto }}
               </option>
@@ -145,16 +146,10 @@ export default {
   },
   methods: {
     removeCoin(i) {
-      // this.allCoin.splice(i, 1);
-      this.allCoin = this.allCoin.filter((e, i) => {
-        return i !== i;
-      });
+      this.allCoin.splice(i,1)
     },
-    all() {
-      // console.log(this.allCoin, "hey");
-      if (this.coin !== "") {
-        this.allCoin.push(this.coin);
-      }
+    add() {
+      this.allCoin.push(this.coin);
     },
   },
 };
