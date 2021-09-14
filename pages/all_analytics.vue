@@ -1,59 +1,74 @@
 <template>
   <div class="">
     <header-vue />
-    <h2 class="ma-headers mt-40 wrapper">Market Analytics</h2>
 
-    <div class="mt-12 lg:flex block items-center justify-between wrapper">
-      <div class="flex items-start">
-        <div
-          class="lg:h-14 h-10 flex lg:items-center items-start gap-2 lg:mr-4"
-          style="background: #1f2b4a"
+    <div class="mt-40 flex items-start wrapper">
+      <div
+        class="lg:h-14 h-10 flex lg:items-center items-start gap-2 lg:mr-4"
+        style="background: #1f2b4a"
+      >
+        <button
+          class="py-3 px-5 m-1"
+          @click="toggleFirst()"
+          :class="firstConditional ? 'toggle' : ''"
         >
-          <p class="lsca active md:m-1">Locked Value</p>
-          <p class="lsca">Stable coin Analysis</p>
-          <plus-icon class="m-1" />
-        </div>
-        <!-- <ProviderDropdown /> -->
+          Locked values
+        </button>
+        <button
+          class="py-3 px-5"
+          @click="toggleSecond()"
+          :class="secondConditional ? 'toggle' : ''"
+        >
+          Stable coin analysis
+        </button>
+        <!-- <plus-icon class="m-1" /> -->
       </div>
-
-      <div class="lg:flex hidden items-center gap-2">
-        <tab class="active-tab">ALL</tab>
-        <tab>DEFI</tab>
-        <tab>NFT</tab>
-        <tab>HECO</tab>
-      </div>
+      <!-- <ProviderDropdown /> -->
     </div>
 
-    <div
-      class="
-        wrapper
-        lg:mt-10
-        mt-20
-        mb-4
-        flex
-        items-end
-        lg:justify-start
-        justify-end
-        lg:gap-12
-      "
-    >
-      <div>
-        <div class="flex items-center gap-2">
-          <Color theme="yellow" />
-          <h5 class="inter lg:text-2xl text-xs">$92.88B</h5>
-        </div>
-        <span class="small-text ml-4 lg:text-sm font-light"
-          >Gross value locked</span
+    <div class="mt-5 lg:flex block items-center justify-between wrapper">
+      <div class="lg:flex hidden items-center gap-2">
+        <button
+          @click="chooseCategory(select)"
+          class="py-4 px-6"
+          :class="[categoryValue === select ? 'active-tab' : ' ']"
+          v-for="(select, j) in category"
+          :key="j"
         >
+          {{ select }}
+        </button>
       </div>
-      <div>
-        <div class="flex items-center gap-2">
-          <Color theme="green" />
-          <h5 class="inter lg:text-2xl text-xs">$92.88B</h5>
+      <div
+        class="
+          wrapper
+          lg:mt-10
+          mt-20
+          mb-4
+          flex
+          items-end
+          lg:justify-start
+          justify-end
+          lg:gap-12
+        "
+      >
+        <div>
+          <div class="flex items-center gap-2">
+            <Color theme="yellow" />
+            <h5 class="inter lg:text-2xl text-xs">$92.88B</h5>
+          </div>
+          <span class="small-text ml-4 lg:text-sm font-thin"
+            >Gross value locked</span
+          >
         </div>
-        <span class="small-text ml-4 lg:text-sm font-light"
-          >Net value locked</span
-        >
+        <div>
+          <div class="flex items-center gap-2">
+            <Color theme="green" />
+            <h5 class="inter lg:text-2xl text-xs">$92.88B</h5>
+          </div>
+          <span class="small-text ml-4 lg:text-sm font-thin"
+            >Net value locked</span
+          >
+        </div>
       </div>
     </div>
 
@@ -139,7 +154,12 @@ export default {
     HeaderVue,
   },
   data() {
-    return {};
+    return {
+      firstConditional: true,
+      secondConditional: false,
+      category: ["ALL", "DEFI", "NFT", "HECO"],
+      categoryValue: "All",
+    };
   },
 
   computed: {
@@ -147,17 +167,41 @@ export default {
       return this.$store.state.analytics.marketAnalytics;
     },
   },
+  methods: {
+    toggleFirst() {
+      this.firstConditional = true;
+      if (this.firstConditional === true) {
+        this.secondConditional = false;
+      }
+    },
+    toggleSecond() {
+      this.secondConditional = true;
+      if (this.secondConditional === true) {
+        this.firstConditional = false;
+      }
+    },
+    chooseCategory(option) {
+      this.categoryValue = option;
+    },
+  },
+  mounted() {
+    this.categoryValue = this.category[0];
+  },
 };
 </script>
 
 <style scoped>
+.toggle {
+  background: #056237;
+  border-radius: 4px;
+}
 table {
   margin-top: 2px;
 }
 
 td,
 th {
-  padding: 16px 75px;
+  padding: 16px 69px;
 }
 
 .mobile-a-table {

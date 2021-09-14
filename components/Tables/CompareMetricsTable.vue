@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2 class="wrapper font-medium ma-headers">Compare coins</h2>
-    <div class="wrapper">
+    <div class="wrapper mt-12">
       <table id="ma_table06" class="mb-24 lg:table hidden">
         <tr>
           <td rowspan="2" class="inter">

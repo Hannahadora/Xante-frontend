@@ -10,20 +10,35 @@
           class="h-14 flex items-center gap-2 mr-4"
           style="background: #1f2b4a"
         >
-          <p class="py-3 px-5 m-1 rounded" style="background: #056237">
-            Locked Value
-          </p>
-          <p class="py-3 px-5">Stable coin Analysis</p>
-          <plus-icon class="m-1" />
+          <button
+            class="py-3 px-5 m-1"
+            @click="toggleFirst()"
+            :class="firstConditional ? 'toggle' : ''"
+          >
+            Locked values
+          </button>
+          <button
+            class="py-3 px-5"
+            @click="toggleSecond()"
+            :class="secondConditional ? 'toggle' : ''"
+          >
+            Stable coin analysis
+          </button>
+          <!-- <plus-icon class="m-1" /> -->
         </div>
-        <!-- <ProviderDropdown /> -->
+        <provider-dropdown-vue />
       </div>
 
-      <div class="lg:flex hidden items-center gap-2">
-        <tab class="active-tab">ALL</tab>
-        <tab>DEFI</tab>
-        <tab>NFT</tab>
-        <tab>HECO</tab>
+      <div class="lg:flex hidden space-x-4 items-center gap-2">
+        <button
+          @click="chooseCategory(select)"
+          class="py-4 px-6"
+          :class="[categoryValue === select ? 'active-tab' : ' ']"
+          v-for="(select, j) in category"
+          :key="j"
+        >
+          {{ select }}
+        </button>
       </div>
     </div>
 
@@ -45,7 +60,7 @@
           <Color theme="yellow" />
           <h5 class="inter lg:text-2xl text-xs">$92.88B</h5>
         </div>
-        <span class="small-text ml-4 lg:text-sm font-light"
+        <span class="small-text ml-4 lg:text-sm font-thin"
           >Gross value locked</span
         >
       </div>
@@ -54,7 +69,7 @@
           <Color theme="green" />
           <h5 class="inter lg:text-2xl text-xs">$92.88B</h5>
         </div>
-        <span class="small-text ml-4 lg:text-sm font-light"
+        <span class="small-text ml-4 lg:text-sm font-thin"
           >Net value locked</span
         >
       </div>
@@ -136,26 +151,46 @@
 </template>
 
 <script>
+import ProviderDropdownVue from "../ProviderDropdown.vue";
+
 export default {
   name: "AnalyticsTable",
-
+  components: {
+    ProviderDropdownVue,
+  },
   data() {
     return {
-      // marketAnalytics: "",
+      firstConditional: true,
+      secondConditional: false,
+      category: ["ALL", "DEFI", "NFT", "HECO"],
+      categoryValue: "All",
     };
   },
 
-  // mounted() {
-  //  this.marketAnalytics = this.$store.state.MarketAnalytics;
-  // },
-
   computed: {
-    // filteredMarketAnalytics() {
-    //   return this.$store.getters.filteredMarketAnalytics;
-    // },
     marketAnalytics() {
       return this.$store.state.analytics.marketAnalytics.slice(0, 3);
     },
+  },
+  methods: {
+    toggleFirst() {
+      this.firstConditional = true;
+      if (this.firstConditional === true) {
+        this.secondConditional = false;
+      }
+    },
+    toggleSecond() {
+      this.secondConditional = true;
+      if (this.secondConditional === true) {
+        this.firstConditional = false;
+      }
+    },
+    chooseCategory(option) {
+      this.categoryValue = option;
+    },
+  },
+  mounted() {
+    this.categoryValue = this.category[0];
   },
 };
 </script>
@@ -174,6 +209,11 @@ td {
   padding: 16px 24px 29px 24px;
   background: #0a132a;
   margin-bottom: 4px;
+}
+
+.toggle {
+  background: #056237;
+  border-radius: 4px;
 }
 
 @media screen and (max-width: 768px) {
