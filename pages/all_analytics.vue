@@ -194,6 +194,7 @@ export default {
 .toggle {
   background: #056237;
   border-radius: 4px;
+  transition: 0.3s ease;
 }
 table {
   margin-top: 2px;

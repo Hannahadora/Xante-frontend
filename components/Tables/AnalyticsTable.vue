@@ -214,6 +214,7 @@ td {
 .toggle {
   background: #056237;
   border-radius: 4px;
+  transition: 0.3s ease-in;
 }
 
 @media screen and (max-width: 768px) {

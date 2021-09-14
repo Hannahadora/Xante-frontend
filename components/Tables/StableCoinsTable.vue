@@ -14,14 +14,34 @@
         justify-between
       "
     >
-      <div class="flex items-end gap-2">
-        <tab class="active-tab">USDT</tab>
-        <tab>USDC</tab>
-        <tab>BUSD</tab>
-        <button class="arrow-btn">
-          <img src="~/assets/images/Arrowdown.png" alt="" />
+      <div class="flex items-end space-x-2 relative">
+        <button
+          @click="chooseCoin(select)"
+          class="py-4 px-3"
+          :class="[stableCoin === select ? 'active-tab' : ' ']"
+          v-for="(select, g) in allStableCoins"
+          :key="g"
+        >
+          {{ select }}
+        </button>
+
+        <button class="arrow-btn" @click="showCoin()">
+          <img src="/images/down.png" alt="" />
         </button>
         <span class="text-xs lg:block hidden">More coins</span>
+        <div
+          class="coin flex flex-col"
+          v-if="visible"
+          :class="visible ? 'fade-in' : 'fade-out'"
+        >
+          <p
+            v-for="(list, e) in coins"
+            :key="Math.random() * e"
+            @click="selectCoin(list)"
+          >
+            {{ list }}
+          </p>
+        </div>
       </div>
 
       <div class="flex items-center lg:mt-0 mt-4">
@@ -77,13 +97,39 @@ export default {
   name: "StableCoinTable",
   components: { Graph, Tab },
   data() {
-    return {};
+    return {
+      allStableCoins: ["USDT", "USDC", "BUSD"],
+      stableCoin: "USDT",
+      visible: false,
+      coins: ["USDF", "USDC", "BUSD"],
+    };
   },
 
   computed: {
     stableCoins() {
       return this.$store.state.stable_coins.stableCoins.slice(0, 3);
     },
+  },
+  methods: {
+    chooseCoin(option) {
+      this.stableCoin = option;
+    },
+    showCoin() {
+      this.visible = !this.visible;
+    },
+    selectCoin(value) {
+      this.allStableCoins.push(value);
+      const removeDuplicate = (data) => {
+        return data.filter((e, index) => {
+          data.indexOf(e) === index;
+        });
+      };
+      console.log(removeDuplicate(this.allStableCoins));
+      this.allStableCoins = removeDuplicate(this.allStableCoins);
+    },
+  },
+  mounted() {
+    this.stableCoin = this.allStableCoins[0];
   },
 };
 </script>
@@ -93,7 +139,21 @@ th,
 td {
   padding: 16px 66px !important;
 }
-
+.coin {
+  background: #1f2b4a;
+  min-width: 134px;
+  border-radius: 3px;
+  position: absolute;
+  z-index: 50;
+  top: 63px;
+  right: 0px;
+}
+.coin p {
+  padding: 12px 16px;
+}
+.coin p:hover {
+  background: #056237;
+}
 @media screen and (max-width: 540px) {
   .s-btn-holder,
   .sc-graph {

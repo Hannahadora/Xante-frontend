@@ -7,7 +7,7 @@
       </div>
 
       <div
-        :class="{ hidden: !visible, visible }"
+        :class="visible ? 'fade-in' : 'hidden'"
         class="p-dropdown-content text-white p-2"
       >
         <ul>
