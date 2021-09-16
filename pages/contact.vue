@@ -1,15 +1,15 @@
 <template>
   <div>
-    <media-vue />
+    <contact-vue />
   </div>
 </template>
 
 <script>
-import mediaVue from "~/components/media.vue";
+import contactVue from "~/components/contact.vue";
 
 export default {
   components: {
-    mediaVue,
+    contactVue,
   },
 };
 </script>

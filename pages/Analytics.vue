@@ -1,6 +1,5 @@
 <template>
   <section>
-    <header-vue />
     <div class="lg:mt-44 mt-11">
       <analytics-table-vue />
     </div>
@@ -47,7 +46,7 @@
 
 <script>
 import DGreenBtnVue from "~/components/Buttons/DGreenBtn.vue";
-import HeaderVue from "~/components/Header.vue";
+
 import AnalyticsTableVue from "~/components/Tables/AnalyticsTable.vue";
 import CoinPriceVue from "~/components/Tables/CoinPrice.vue";
 import CoinsVue from "~/components/Tables/Coins.vue";
@@ -58,7 +57,6 @@ import Top20Vue from "~/components/Tables/Top20.vue";
 
 export default {
   components: {
-    HeaderVue,
     AnalyticsTableVue,
     StableCoinsTableVue,
     Top10Vue,
@@ -105,7 +103,7 @@ table {
   flex-direction: row;
   align-items: flex-start;
   gap: 32px;
-  padding: 0px 120px;
+  padding: 0px 68px;
 }
 
 .stable-coin-table td,

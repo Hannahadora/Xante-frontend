@@ -50,8 +50,8 @@
       </div>
     </div>
 
-    <div class="sc-graph wrapper">
-      <graph></graph>
+    <div class="wrapper">
+      <stable-coins-graph-vue />
     </div>
 
     <div class="wrapper">
@@ -90,12 +90,12 @@
 </template>
 
 <script>
-import Graph from "../Graph.vue";
+import stableCoinsGraphVue from "../stableCoins.graph.vue";
 import Tab from "../Tab.vue";
 
 export default {
   name: "StableCoinTable",
-  components: { Graph, Tab },
+  components: { Tab, stableCoinsGraphVue },
   data() {
     return {
       allStableCoins: [],

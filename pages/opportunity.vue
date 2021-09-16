@@ -1,15 +1,15 @@
 <template>
   <div>
-    <media-vue />
+    <opportunity-vue />
   </div>
 </template>
 
 <script>
-import mediaVue from "~/components/media.vue";
+import opportunityVue from "~/components/opportunity.vue";
 
 export default {
   components: {
-    mediaVue,
+    opportunityVue,
   },
 };
 </script>

@@ -1,7 +1,5 @@
 <template>
   <div class="m-0 p-0">
-    <Header />
-
     <!-- <div class="header-sect" style=""> -->
 
     <!-- <div class="" style="">
@@ -38,16 +36,12 @@
 </template>
 
 <script>
-import Header from "../components/Header.vue";
 // import PryButton from '../components/Buttons/PryButton.vue'
-// import Footer from '../components/Footer.vue'
 
 export default {
   name: "index",
   components: {
-    Header,
     // PryButton,
-    // Footer,
   },
 };
 </script>

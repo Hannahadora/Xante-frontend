@@ -76,7 +76,6 @@
     </div>
 
     <div class="wrapper">
-      <!-- <graph></graph> -->
       <div>
         <locked-analytics-graph-vue />
       </div>

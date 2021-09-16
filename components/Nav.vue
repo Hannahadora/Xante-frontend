@@ -1,26 +1,26 @@
 <template>
   <div id="nav">
     <ul class="flex items-center gap-10">
-      <NuxtLink to="/" class="nav-link">Home</NuxtLink>
-
-      <div class="dropdown">
+      <nuxt-link to="/" class="nav-link">Home</nuxt-link>
+      <nuxt-link to="/market">Compare</nuxt-link>
+      <!-- <div class="dropdown">
         <button class="dropbtn nav-link" ref="comparison">
           Compare
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-          <nuxt-link to="/Centralised" class="compare">Centralised</nuxt-link>
+          <nuxt-link to="/centralised" class="compare">Centralised</nuxt-link>
 
-          <nuxt-link to="/Decentralized" class="compare"
+          <nuxt-link to="/decentralized" class="compare"
             >Decentralised</nuxt-link
           >
         </div>
-      </div>
-      <NuxtLink to="/Analytics" class="nav-link">Market Analytics</NuxtLink>
-      <NuxtLink to="/tools" class="nav-link">Tools</NuxtLink>
-      <NuxtLink to="/opportunities" class="nav-link">Opportunities</NuxtLink>
-      <NuxtLink to="/media" class="nav-link">Media</NuxtLink>
-      <NuxtLink to="/contact_us" class="nav-link">Contact Us</NuxtLink>
+      </div> -->
+      <nuxt-link to="/analytics" class="nav-link">Market Analytics</nuxt-link>
+      <nuxt-link to="/tool" class="nav-link">Tools</nuxt-link>
+      <nuxt-link to="/opportunity" class="nav-link">Opportunities</nuxt-link>
+      <nuxt-link to="/media" class="nav-link">Media</nuxt-link>
+      <nuxt-link to="/contact" class="nav-link">Contact Us</nuxt-link>
     </ul>
   </div>
 </template>
@@ -28,16 +28,16 @@
 <script>
 export default {
   name: "Nav",
-  mounted() {
-    if (this.$route.path === "/Centralised") {
-      this.$refs.comparison.style.borderBottom = "4px solid #39B87D";
-    } else if (this.$route.path === "/Decentralised") {
-      this.$refs.comparison.style.borderBottom = "4px solid #39B87D";
-    } else {
-      this.$refs.comparison.style.borderBottom = "none";
-    }
-    console.log(this.$route.path, "hhhh");
-  },
+  // mounted() {
+  //   if (this.$route.path === "/Centralised") {
+  //     this.$refs.comparison.style.borderBottom = "4px solid #39B87D";
+  //   } else if (this.$route.path === "/Decentralised") {
+  //     this.$refs.comparison.style.borderBottom = "4px solid #39B87D";
+  //   } else {
+  //     this.$refs.comparison.style.borderBottom = "none";
+  //   }
+  //   console.log(this.$route.path, "hhhh");
+  // },
 };
 </script>
 

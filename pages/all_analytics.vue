@@ -1,7 +1,5 @@
 <template>
   <div class="">
-    <header-vue />
-
     <div class="mt-40 flex items-start wrapper">
       <div
         class="lg:h-14 h-10 flex lg:items-center items-start gap-2 lg:mr-4"
@@ -73,8 +71,9 @@
     </div>
 
     <div class="wrapper">
-      <graph></graph>
-
+      <div>
+        <analytics-graph-vue />
+      </div>
       <table class="w-full mb-6 lg:table hidden">
         <tr>
           <th>Name</th>
@@ -140,18 +139,17 @@
 </template>
 
 <script>
+import analyticsGraphVue from "~/components/analytics.graph.vue";
 import Color from "~/components/Color.vue";
-import Graph from "~/components/Graph.vue";
-import HeaderVue from "~/components/Header.vue";
+
 import Tab from "~/components/Tab.vue";
 
 export default {
   name: "analytics",
   components: {
     Color,
-    Graph,
+    analyticsGraphVue,
     Tab,
-    HeaderVue,
   },
   data() {
     return {

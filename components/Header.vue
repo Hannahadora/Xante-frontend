@@ -26,7 +26,7 @@ export default {
   width: 100%;
   border-radius: 0px;
   background: #0b0f1a;
-  padding: 14px 120px;
+  padding: 14px 68px;
   position: fixed;
   top: 0;
   z-index: 100000000;
