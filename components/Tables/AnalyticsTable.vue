@@ -76,8 +76,10 @@
     </div>
 
     <div class="wrapper">
-      <graph></graph>
-
+      <!-- <graph></graph> -->
+      <div>
+        <locked-analytics-graph-vue />
+      </div>
       <table class="lg:table hidden w-full">
         <tr>
           <th>Name</th>
@@ -151,12 +153,15 @@
 </template>
 
 <script>
+import lockedAnalyticsGraphVue from "../analytics.graph.vue";
+
 import ProviderDropdownVue from "../ProviderDropdown.vue";
 
 export default {
   name: "AnalyticsTable",
   components: {
     ProviderDropdownVue,
+    lockedAnalyticsGraphVue,
   },
   data() {
     return {
