@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="relative">
     <div>
       <img
         class="img1 xl:block hidden mx-auto pt-20"
@@ -9,6 +9,9 @@
     </div>
 
     <signup-vue />
+    <div class="absolute bottom-0 right-0">
+      <img src="/images/first.png" alt="" />
+    </div>
   </div>
 </template>
 
